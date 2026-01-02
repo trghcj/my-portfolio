@@ -9,7 +9,7 @@ export const projects = [
   },
   {
     title: "Zynkup – Campus Event Platform",
-    desc: "Cross-college event discovery, RSVP, reminders & club management. Currently in beta with 3 colleges.",
+    desc: "Cross-college event discovery, RSVP, reminders & club management. Currently in beta version. Adding more features like image uploadaing and push notifications.",
     tech: ["Flutter", "Firebase Auth", "Firestore", "Push Notifications"],
     live: "https://zynkup-app.web.app/",
     github: "https://github.com/trghcj/zynkup-app",
