@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Suggestions from './pages/Suggestions';
+import { Analytics } from '@vercel/analytics/react'; // ← Import Analytics
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -53,6 +54,9 @@ function App() {
         <p className="text-lg">No boilerplate, just components and classes</p>
         <p className="mt-3 text-purple-300">© 2026 Divyansh Singh. All rights reserved.</p>
       </footer>
+
+      {/* Vercel Analytics */}
+      <Analytics /> {/* ← Add this at the root of your app */}
     </>
   );
 }
