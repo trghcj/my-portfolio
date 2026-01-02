@@ -8,8 +8,7 @@ export default function Suggestions() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (loading) return; // prevent double submit
+    if (loading) return;
 
     setLoading(true);
     setStatus("Sending...");
@@ -20,10 +19,7 @@ export default function Suggestions() {
     const message = form.message.value.trim();
 
     try {
-      console.log("➡️ Starting Firestore write...");
-      console.log("Firestore DB:", db);
-
-      // ⏱️ Safety timeout (10s)
+      // Safety timeout (10s)
       const timeoutPromise = new Promise((_, reject) =>
         setTimeout(() => reject(new Error("Request timed out")), 10000)
       );
@@ -37,16 +33,12 @@ export default function Suggestions() {
 
       await Promise.race([writePromise, timeoutPromise]);
 
-      console.log("✅ Firestore write success");
-
-      setStatus("✅ Thank you! Your message has been saved.");
+      setStatus("✅ Thank you! Your message has been sent.");
       form.reset();
-
     } catch (error) {
-      console.error("❌ Firestore Error:", error);
       setStatus(
         error.message === "Request timed out"
-          ? "❌ Connection timed out. Please check Firebase setup."
+          ? "❌ Connection timed out. Please try again later."
           : "❌ Failed to send message. Please try again."
       );
     } finally {
@@ -55,67 +47,105 @@ export default function Suggestions() {
   };
 
   return (
-    <section className="py-24 bg-gray-50 min-h-screen">
+    <section
+      className="py-24 min-h-screen transition-colors duration-300
+      bg-gray-100 dark:bg-gray-900"
+    >
       <div className="container mx-auto px-6 max-w-2xl">
-        <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">
+
+        {/* Heading */}
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6
+          text-gray-900 dark:text-white">
           Ask Me Anything / Suggestions
         </h2>
 
+        <p className="text-center mb-12 text-gray-600 dark:text-gray-400">
+          Have feedback, ideas, or just want to say hi? Drop a message below 👇
+        </p>
+
+        {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl shadow-2xl p-10"
+          className="rounded-2xl p-10 shadow-2xl
+          bg-white dark:bg-gray-800"
         >
+          {/* Name */}
           <div className="mb-8">
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block font-medium mb-2
+              text-gray-700 dark:text-gray-300">
               Your Name
             </label>
             <input
               type="text"
               name="name"
               required
-              className="w-full px-4 py-3 border rounded-lg"
+              className="w-full px-4 py-3 rounded-lg border
+              bg-gray-50 dark:bg-gray-900
+              border-gray-300 dark:border-gray-700
+              text-gray-900 dark:text-white
+              focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
 
+          {/* Email */}
           <div className="mb-8">
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block font-medium mb-2
+              text-gray-700 dark:text-gray-300">
               Your Email
             </label>
             <input
               type="email"
               name="email"
               required
-              className="w-full px-4 py-3 border rounded-lg"
+              className="w-full px-4 py-3 rounded-lg border
+              bg-gray-50 dark:bg-gray-900
+              border-gray-300 dark:border-gray-700
+              text-gray-900 dark:text-white
+              focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
 
-          <div className="mb-8">
-            <label className="block text-gray-700 font-medium mb-2">
+          {/* Message */}
+          <div className="mb-10">
+            <label className="block font-medium mb-2
+              text-gray-700 dark:text-gray-300">
               Message / Suggestion
             </label>
             <textarea
               name="message"
               rows="6"
               required
-              className="w-full px-4 py-3 border rounded-lg"
+              className="w-full px-4 py-3 rounded-lg border resize-none
+              bg-gray-50 dark:bg-gray-900
+              border-gray-300 dark:border-gray-700
+              text-gray-900 dark:text-white
+              focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
 
+          {/* Button */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-purple-600 text-white py-4 rounded-lg font-bold hover:bg-purple-700 transition disabled:opacity-50"
+            className="w-full py-4 rounded-lg font-bold text-white
+            bg-purple-600 hover:bg-purple-700
+            transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
 
+          {/* Status */}
           {status && (
-            <p className="mt-6 text-center text-lg font-medium">{status}</p>
+            <p className="mt-6 text-center font-medium
+              text-gray-700 dark:text-gray-300">
+              {status}
+            </p>
           )}
         </form>
 
-        <p className="text-center mt-8 text-gray-600">
-          I'll get back to you soon! 🚀
+        {/* Footer Text */}
+        <p className="text-center mt-8 text-gray-600 dark:text-gray-400">
+          I’ll get back to you as soon as possible 🚀
         </p>
       </div>
     </section>
