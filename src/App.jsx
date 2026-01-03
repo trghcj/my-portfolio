@@ -117,7 +117,7 @@ function App() {
       {/* Footer */}
       <footer className="py-12 bg-gray-50 dark:bg-gray-950 text-center text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800">
         <p className="text-lg mb-2">
-          Built with passion using React, Vite, Tailwind CSS & Firebase
+          Turning ideas into reality, one line at a time.
         </p>
         <p className="text-purple-600 dark:text-purple-400 font-medium">
           © 2026 Divyansh Singh. All rights reserved.
