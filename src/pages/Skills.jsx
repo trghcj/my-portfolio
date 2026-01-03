@@ -40,6 +40,7 @@ export default function Skills() {
 
   return (
     <section
+      id="skills"
       className="relative w-full min-h-screen py-24
       bg-gray-100 dark:bg-gray-900
       transition-colors duration-300"
@@ -47,13 +48,17 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6
-          text-gray-900 dark:text-white">
+        <h2
+          className="text-4xl md:text-5xl font-bold text-center mb-6
+          text-gray-900 dark:text-white"
+        >
           Skills & Technologies
         </h2>
 
-        <p className="text-center text-gray-600 dark:text-gray-400
-          max-w-2xl mx-auto mb-20">
+        <p
+          className="text-center text-gray-600 dark:text-gray-400
+          max-w-2xl mx-auto mb-20"
+        >
           Technologies and tools I use to design, build, and deploy modern
           applications.
         </p>
@@ -62,13 +67,17 @@ export default function Skills() {
         <div className="space-y-24">
           {skillCategories.map((category) => (
             <div key={category.title}>
-              <h3 className="text-2xl md:text-3xl font-semibold text-center mb-12
-                text-gray-800 dark:text-gray-200">
+              <h3
+                className="text-2xl md:text-3xl font-semibold text-center mb-12
+                text-gray-800 dark:text-gray-200"
+              >
                 {category.title}
               </h3>
 
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8
-                gap-8 max-w-6xl mx-auto">
+              <div
+                className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8
+                gap-8 max-w-6xl mx-auto"
+              >
                 {category.skills.map((skill) => (
                   <div
                     key={skill.name}
@@ -85,8 +94,10 @@ export default function Skills() {
                       group-hover:scale-110 transition"
                     />
 
-                    <p className="font-semibold text-center text-sm md:text-base
-                      text-gray-800 dark:text-gray-200">
+                    <p
+                      className="font-semibold text-center text-sm md:text-base
+                      text-gray-800 dark:text-gray-200"
+                    >
                       {skill.name}
                     </p>
                   </div>

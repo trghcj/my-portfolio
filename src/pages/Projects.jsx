@@ -5,14 +5,17 @@ import { ExternalLink, Github } from 'lucide-react';
 export default function Projects() {
   return (
     <section
+      id="projects"
       className="py-24 min-h-screen transition-colors duration-300
       bg-gray-100 dark:bg-gray-900"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20
-          text-gray-900 dark:text-white">
+        <h2
+          className="text-4xl md:text-5xl font-bold text-center mb-20
+          text-gray-900 dark:text-white"
+        >
           Projects
         </h2>
 
@@ -29,9 +32,11 @@ export default function Projects() {
               glareMaxOpacity={0.25}
               glareColor="#a78bfa"
             >
-              <div className="bg-white dark:bg-gray-800 
+              <div
+                className="bg-white dark:bg-gray-800
                 rounded-2xl overflow-hidden shadow-xl
-                hover:shadow-2xl transition-all duration-300">
+                hover:shadow-2xl transition-all duration-300"
+              >
 
                 {/* Project Image */}
                 <img
@@ -42,8 +47,10 @@ export default function Projects() {
 
                 {/* Content */}
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-3
-                    text-gray-900 dark:text-white">
+                  <h3
+                    className="text-2xl font-bold mb-3
+                    text-gray-900 dark:text-white"
+                  >
                     {p.title}
                   </h3>
 
@@ -76,7 +83,8 @@ export default function Projects() {
                         text-purple-600 dark:text-purple-400
                         hover:underline"
                       >
-                        <ExternalLink size={20} /> Live
+                        <ExternalLink size={20} />
+                        Live
                       </a>
                     )}
 
@@ -88,7 +96,8 @@ export default function Projects() {
                       text-gray-700 dark:text-gray-300
                       hover:text-purple-600 dark:hover:text-purple-400"
                     >
-                      <Github size={20} /> Source
+                      <Github size={20} />
+                      Source
                     </a>
                   </div>
                 </div>

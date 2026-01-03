@@ -1,35 +1,35 @@
-import ParticlesBackground from '../components/ParticlesBackground';
-import { TypeAnimation } from 'react-type-animation';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import ParticlesBackground from '../components/ParticlesBackground'
+import { TypeAnimation } from 'react-type-animation'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 export default function Home() {
   return (
     <section
+      id="home"
       className="relative min-h-screen w-full flex items-center justify-center
       bg-gradient-to-br from-purple-700 via-purple-800 to-purple-900
       dark:from-purple-900 dark:via-purple-950 dark:to-black
       overflow-hidden transition-colors duration-300"
     >
-      {/* Background Particles */}
+      {/* Background */}
       <ParticlesBackground />
 
-      <div className="w-full max-w-5x3 px-30 md:px-40 text-center relative z-20">
-        
+      <div className="w-full max-w-5xl px-6 md:px-10 text-center relative z-20">
+
         {/* Profile Image */}
         <img
           src="https://github.com/trghcj.png"
           alt="Divyansh Singh"
-          className="w-40 h-40 md:w-56 md:h-56 rounded-full mx-auto 
+          className="w-36 h-36 md:w-52 md:h-52 rounded-full mx-auto 
           border-8 border-purple-400 shadow-2xl 
-          hover:scale-105 transition-all duration-500"
+          hover:scale-105 hover:shadow-purple-500/50
+          transition-all duration-500"
         />
 
         {/* Heading */}
         <h1 className="text-3xl md:text-5xl font-bold mt-8 mb-6 text-white">
           Hi There, I'm{' '}
-          <span className="text-purple-300">
-            Divyansh Singh
-          </span>
+          <span className="text-purple-300">Divyansh Singh</span>
         </h1>
 
         {/* Animated Role */}
@@ -51,15 +51,15 @@ export default function Home() {
           </span>
         </p>
 
-        {/* About Me */}
+        {/* About */}
         <p className="text-base md:text-lg max-w-3xl mx-auto mb-10 leading-relaxed text-purple-100">
           Android & Web Developer passionate about building modern, scalable,
           and user-friendly applications. I enjoy working on college event apps
           and personal projects while continuously improving my skills.
         </p>
 
-        {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
+        {/* Primary Buttons */}
+        <div className="flex flex-wrap justify-center gap-6 mb-8">
           <a
             href="https://drive.google.com/file/d/1RGzT0r5Egsy7EdLf9yOzp_27IBFAhCtQ/view"
             target="_blank"
@@ -82,13 +82,44 @@ export default function Home() {
           </a>
         </div>
 
+        {/* 🔗 QUICK LINKS */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {[
+            { href: '#skills', label: '🚀 Skills' },
+            { href: '#projects', label: '📂 Projects' },
+            { href: '#suggestions', label: '💡 Suggestions' },
+          ].map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="px-5 py-2 text-sm font-semibold rounded-full
+              bg-white/10 text-white border border-white/20
+              hover:bg-purple-500 hover:scale-105
+              transition-all"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
         {/* Contact Icons */}
-        <div id="contact" className="flex justify-center gap-8 text-white">
-          <a href="https://github.com/trghcj" target="_blank">
+        <div
+          id="contact"
+          className="flex justify-center gap-8 text-white"
+        >
+          <a
+            href="https://github.com/trghcj"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Github size={36} className="hover:scale-125 hover:text-purple-300 transition" />
           </a>
 
-          <a href="https://www.linkedin.com/in/divyansh-singh-332b741aa/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/divyansh-singh-332b741aa/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Linkedin size={36} className="hover:scale-125 hover:text-purple-300 transition" />
           </a>
 
@@ -98,5 +129,5 @@ export default function Home() {
         </div>
       </div>
     </section>
-  );
+  )
 }

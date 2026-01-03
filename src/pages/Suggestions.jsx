@@ -10,13 +10,18 @@ export default function Suggestions() {
     e.preventDefault();
     if (loading) return;
 
-    setLoading(true);
-    setStatus("Sending...");
-
     const form = e.target;
     const name = form.name.value.trim();
     const email = form.email.value.trim();
     const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      setStatus("❌ Please fill in all fields.");
+      return;
+    }
+
+    setLoading(true);
+    setStatus("Sending...");
 
     try {
       // Safety timeout (10s)
@@ -48,6 +53,7 @@ export default function Suggestions() {
 
   return (
     <section
+      id="suggestions"
       className="py-24 min-h-screen transition-colors duration-300
       bg-gray-100 dark:bg-gray-900"
     >
