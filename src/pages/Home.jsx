@@ -1,6 +1,7 @@
 import ParticlesBackground from '../components/ParticlesBackground'
 import { TypeAnimation } from 'react-type-animation'
 import { Github, Linkedin, Mail } from 'lucide-react'
+import { Link } from 'react-router-dom'  // ← Add this import
 
 export default function Home() {
   return (
@@ -82,23 +83,23 @@ export default function Home() {
           </a>
         </div>
 
-        {/* 🔗 QUICK LINKS */}
+        {/* 🔗 QUICK LINKS - Now using <Link> for proper page navigation */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {[
-            { href: '#skills', label: '🚀 Skills' },
-            { href: '#projects', label: '📂 Projects' },
-            { href: '#suggestions', label: '💡 Suggestions' },
+            { to: '/skills', label: '🚀 Skills' },
+            { to: '/projects', label: '📂 Projects' },
+            { to: '/suggestions', label: '💡 Suggestions' },
           ].map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+            <Link
+              key={link.to}
+              to={link.to}
               className="px-5 py-2 text-sm font-semibold rounded-full
               bg-white/10 text-white border border-white/20
               hover:bg-purple-500 hover:scale-105
               transition-all"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 

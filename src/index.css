@@ -9,48 +9,150 @@
    BASE STYLES
 ================================ */
 @layer base {
-  * {
+  *, *::before, *::after {
     @apply box-border;
   }
 
   html {
     scroll-behavior: smooth;
-  }
-
-  body {
-    @apply min-h-screen w-full m-0 font-sans bg-white text-gray-900 dark:bg-black dark:text-gray-200;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  a {
-    @apply text-purple-500 font-medium hover:text-purple-600 transition;
+  body {
+    @apply min-h-screen w-full m-0 p-0 font-sans antialiased
+           bg-gray-50 text-gray-900
+           dark:bg-black dark:text-gray-100;
+    line-height: 1.6;
   }
 
+  /* Smooth focus outlines for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-purple-500 ring-offset-2 dark:ring-offset-black;
+  }
+
+  /* Links */
+  a {
+    @apply text-purple-600 dark:text-purple-400 font-medium 
+           hover:text-purple-700 dark:hover:text-purple-300 
+           underline underline-offset-4 hover:underline-offset-2 
+           transition-all duration-200;
+  }
+
+  /* Selection */
   ::selection {
     @apply bg-purple-500 text-white;
+  }
+  ::-moz-selection {
+    @apply bg-purple-500 text-white;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+  h2 { @apply text-3xl md:text-4xl lg:text-5xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+}
+
+/* ==============================
+   COMPONENTS
+================================ */
+@layer components {
+  /* Container */
+  .container {
+    @apply w-full max-w-7xl mx-auto px-6 md:px-8;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white dark:bg-gray-900 
+           rounded-2xl shadow-lg hover:shadow-2xl 
+           border border-gray-200 dark:border-gray-800
+           transition-all duration-300;
+  }
+
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 
+           px-6 py-3 rounded-xl font-semibold 
+           transition-all duration-300 
+           focus-visible:ring-4 focus-visible:ring-purple-500/50;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 
+           text-white hover:from-purple-700 hover:to-pink-700 
+           shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 dark:bg-gray-800 
+           text-gray-900 dark:text-white 
+           hover:bg-gray-300 dark:hover:bg-gray-700;
   }
 }
 
 /* ==============================
-   SCROLLBAR (Desktop)
+   CUSTOM SCROLLBAR (WebKit only)
 ================================ */
 @layer utilities {
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
+    height: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: transparent;
+    @apply bg-gray-100 dark:bg-gray-900 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #7c3aed; /* purple-600 */
-    border-radius: 9999px;
+    @apply bg-gradient-to-b from-purple-500 to-purple-700 
+           rounded-full border-2 border-transparent 
+           bg-clip-padding;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #6d28d9; /* purple-700 */
+    @apply from-purple-600 to-purple-800;
+  }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-gray-950;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply from-purple-600 to-purple-800;
   }
 }
 
+/* ==============================
+   ANIMATIONS
+================================ */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

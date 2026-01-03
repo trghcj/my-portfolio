@@ -24,7 +24,6 @@ export default function Suggestions() {
     setStatus("Sending...");
 
     try {
-      // Safety timeout (10s)
       const timeoutPromise = new Promise((_, reject) =>
         setTimeout(() => reject(new Error("Request timed out")), 10000)
       );
@@ -38,13 +37,14 @@ export default function Suggestions() {
 
       await Promise.race([writePromise, timeoutPromise]);
 
-      setStatus("✅ Thank you! Your message has been sent.");
+      setStatus("✅ Thank you! Your message has been sent successfully.");
       form.reset();
     } catch (error) {
+      console.error("Submission error:", error);
       setStatus(
         error.message === "Request timed out"
-          ? "❌ Connection timed out. Please try again later."
-          : "❌ Failed to send message. Please try again."
+          ? "⏱️ Connection timed out. Please check your internet and try again."
+          : "❌ Failed to send message. Please try again later."
       );
     } finally {
       setLoading(false);
@@ -54,104 +54,133 @@ export default function Suggestions() {
   return (
     <section
       id="suggestions"
-      className="py-24 min-h-screen transition-colors duration-300
-      bg-gray-100 dark:bg-gray-900"
+      className="relative w-full min-h-screen py-32
+      bg-gradient-to-b from-gray-50 to-white
+      dark:from-gray-900 dark:to-black
+      transition-all duration-500"
     >
-      <div className="container mx-auto px-6 max-w-2xl">
+      <div className="max-w-4xl mx-auto px-6">
 
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6
-          text-gray-900 dark:text-white">
-          Ask Me Anything / Suggestions
-        </h2>
+        {/* Main Heading */}
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+            Let's Connect
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Have a question, feedback, project idea, or just want to say hello?
+            <br />
+            I'd love to hear from you!
+          </p>
+        </div>
 
-        <p className="text-center mb-12 text-gray-600 dark:text-gray-400">
-          Have feedback, ideas, or just want to say hi? Drop a message below 👇
-        </p>
+        {/* Form Card */}
+        <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 md:p-12
+          border border-gray-200 dark:border-gray-700">
+          <form onSubmit={handleSubmit} className="space-y-8">
+            {/* Name */}
+            <div>
+              <label className="block text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
+                Your Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                required
+                disabled={loading}
+                className="w-full px-6 py-4 rounded-xl text-lg
+                bg-gray-50 dark:bg-gray-900
+                border border-gray-300 dark:border-gray-700
+                text-gray-900 dark:text-white
+                focus:outline-none focus:ring-4 focus:ring-purple-500/30 focus:border-purple-500
+                transition-all duration-300"
+                placeholder=""
+              />
+            </div>
 
-        {/* Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="rounded-2xl p-10 shadow-2xl
-          bg-white dark:bg-gray-800"
-        >
-          {/* Name */}
-          <div className="mb-8">
-            <label className="block font-medium mb-2
-              text-gray-700 dark:text-gray-300">
-              Your Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              required
-              className="w-full px-4 py-3 rounded-lg border
-              bg-gray-50 dark:bg-gray-900
-              border-gray-300 dark:border-gray-700
-              text-gray-900 dark:text-white
-              focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-          </div>
+            {/* Email */}
+            <div>
+              <label className="block text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
+                Your Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                disabled={loading}
+                className="w-full px-6 py-4 rounded-xl text-lg
+                bg-gray-50 dark:bg-gray-900
+                border border-gray-300 dark:border-gray-700
+                text-gray-900 dark:text-white
+                focus:outline-none focus:ring-4 focus:ring-purple-500/30 focus:border-purple-500
+                transition-all duration-300"
+                placeholder=""
+              />
+            </div>
 
-          {/* Email */}
-          <div className="mb-8">
-            <label className="block font-medium mb-2
-              text-gray-700 dark:text-gray-300">
-              Your Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="w-full px-4 py-3 rounded-lg border
-              bg-gray-50 dark:bg-gray-900
-              border-gray-300 dark:border-gray-700
-              text-gray-900 dark:text-white
-              focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-          </div>
+            {/* Message */}
+            <div>
+              <label className="block text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
+                Message / Question / Suggestion
+              </label>
+              <textarea
+                name="message"
+                rows="8"
+                required
+                disabled={loading}
+                className="w-full px-6 py-4 rounded-xl text-lg resize-none
+                bg-gray-50 dark:bg-gray-900
+                border border-gray-300 dark:border-gray-700
+                text-gray-900 dark:text-white
+                focus:outline-none focus:ring-4 focus:ring-purple-500/30 focus:border-purple-500
+                transition-all duration-300"
+                placeholder="Write your message here..."
+              />
+            </div>
 
-          {/* Message */}
-          <div className="mb-10">
-            <label className="block font-medium mb-2
-              text-gray-700 dark:text-gray-300">
-              Message / Suggestion
-            </label>
-            <textarea
-              name="message"
-              rows="6"
-              required
-              className="w-full px-4 py-3 rounded-lg border resize-none
-              bg-gray-50 dark:bg-gray-900
-              border-gray-300 dark:border-gray-700
-              text-gray-900 dark:text-white
-              focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-          </div>
+            {/* Submit Button */}
+            <div className="text-center">
+              <button
+                type="submit"
+                disabled={loading}
+                className="inline-flex items-center gap-3 px-10 py-5
+                text-xl font-bold text-white rounded-2xl
+                bg-gradient-to-r from-purple-600 to-pink-600
+                hover:from-purple-700 hover:to-pink-700
+                shadow-lg hover:shadow-2xl
+                transform hover:scale-105
+                transition-all duration-300
+                disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                {loading ? (
+                  <>
+                    <svg className="animate-spin h-6 w-6" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message 🚀"
+                )}
+              </button>
+            </div>
 
-          {/* Button */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-4 rounded-lg font-bold text-white
-            bg-purple-600 hover:bg-purple-700
-            transition disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {loading ? "Sending..." : "Send Message"}
-          </button>
+            {/* Status Message */}
+            {status && (
+              <div className={`text-center text-lg font-medium p-5 rounded-xl
+                ${status.includes("✅") 
+                  ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300" 
+                  : "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300"
+                }`}>
+                {status}
+              </div>
+            )}
+          </form>
+        </div>
 
-          {/* Status */}
-          {status && (
-            <p className="mt-6 text-center font-medium
-              text-gray-700 dark:text-gray-300">
-              {status}
-            </p>
-          )}
-        </form>
-
-        {/* Footer Text */}
-        <p className="text-center mt-8 text-gray-600 dark:text-gray-400">
-          I’ll get back to you as soon as possible 🚀
+        {/* Closing Note */}
+        <p className="text-center mt-16 text-lg text-gray-600 dark:text-gray-400">
+          I read every message and will get back to you as soon as possible 💜
         </p>
       </div>
     </section>

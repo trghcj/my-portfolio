@@ -1,11 +1,12 @@
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "Frontend & Mobile",
       skills: [
         { name: "React", icon: "react" },
         { name: "React Native", icon: "react" },
         { name: "Flutter", icon: "flutter" },
+        { name: "Dart", icon: "dart" },
         { name: "Tailwind CSS", icon: "tailwindcss" },
         { name: "Figma", icon: "figma" },
       ],
@@ -22,18 +23,14 @@ export default function Skills() {
       ],
     },
     {
-      title: "Programming Languages",
+      title: "Languages & Tools",
       skills: [
-        { name: "Dart", icon: "dart" },
         { name: "Python", icon: "python" },
-      ],
-    },
-    {
-      title: "Tools & Workflow",
-      skills: [
         { name: "Git", icon: "git" },
         { name: "GitHub", icon: "github" },
         { name: "VS Code", icon: "vscode" },
+        { name: "Docker", icon: "docker" },
+        { name: "AWS", icon: "aws" },
       ],
     },
   ];
@@ -41,62 +38,82 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative w-full min-h-screen py-24
-      bg-gray-100 dark:bg-gray-900
-      transition-colors duration-300"
+      className="relative w-full min-h-screen py-32
+      bg-gradient-to-b from-gray-50 to-white
+      dark:from-gray-900 dark:to-black
+      transition-all duration-500"
     >
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Heading */}
-        <h2
-          className="text-4xl md:text-5xl font-bold text-center mb-6
-          text-gray-900 dark:text-white"
-        >
-          Skills & Technologies
-        </h2>
-
-        <p
-          className="text-center text-gray-600 dark:text-gray-400
-          max-w-2xl mx-auto mb-20"
-        >
-          Technologies and tools I use to design, build, and deploy modern
-          applications.
-        </p>
+        {/* Main Heading */}
+        <div className="text-center mb-20">
+          <h2
+            className="text-5xl md:text-6xl font-bold
+            text-gray-900 dark:text-white
+            mb-6"
+          >
+            Skills & Technologies
+          </h2>
+          <p
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-400
+            max-w-3xl mx-auto"
+          >
+            Tools and technologies I use to build modern, scalable, and beautiful applications —
+            from mobile to full-stack web development.
+          </p>
+        </div>
 
         {/* Skill Categories */}
-        <div className="space-y-24">
-          {skillCategories.map((category) => (
-            <div key={category.title}>
+        <div className="space-y-32">
+          {skillCategories.map((category, catIndex) => (
+            <div
+              key={category.title}
+              className="animate-on-scroll"
+              style={{ animationDelay: `${catIndex * 150}ms` }}
+            >
               <h3
-                className="text-2xl md:text-3xl font-semibold text-center mb-12
-                text-gray-800 dark:text-gray-200"
+                className="text-3xl md:text-4xl font-bold text-center mb-16
+                text-gray-800 dark:text-gray-100
+                relative inline-block"
               >
                 {category.title}
+                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 h-1 bg-purple-500 rounded-full opacity-70"></span>
               </h3>
 
               <div
-                className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8
-                gap-8 max-w-6xl mx-auto"
+                className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8
+                gap-8 justify-items-center"
               >
-                {category.skills.map((skill) => (
+                {category.skills.map((skill, index) => (
                   <div
                     key={skill.name}
-                    className="group flex flex-col items-center p-6 rounded-2xl
+                    className="group flex flex-col items-center p-6 rounded-3xl
                     bg-white dark:bg-gray-800
-                    shadow-md hover:shadow-2xl
-                    hover:-translate-y-2 hover:scale-105
-                    transition-all duration-300"
+                    shadow-lg hover:shadow-2xl
+                    border border-gray-200 dark:border-gray-700
+                    hover:border-purple-400 dark:hover:border-purple-500
+                    hover:-translate-y-3 hover:scale-105
+                    transition-all duration-500 ease-out
+                    opacity-0 animate-on-scroll"
+                    style={{ animationDelay: `${index * 80 + catIndex * 200}ms` }}
                   >
-                    <img
-                      src={`https://skillicons.dev/icons?i=${skill.icon}`}
-                      alt={skill.name}
-                      className="w-16 h-16 md:w-20 md:h-20 mb-4
-                      group-hover:scale-110 transition"
-                    />
+                    <div className="mb-4 p-4 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-2xl
+                    group-hover:from-purple-200 group-hover:to-pink-200
+                    dark:group-hover:from-purple-800/50 dark:group-hover:to-pink-800/50
+                    transition-all duration-300">
+                      <img
+                        src={`https://skillicons.dev/icons?i=${skill.icon}&theme=dark`}
+                        alt={skill.name}
+                        className="w-16 h-16 md:w-20 md:h-20
+                        group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
 
                     <p
-                      className="font-semibold text-center text-sm md:text-base
-                      text-gray-800 dark:text-gray-200"
+                      className="font-bold text-center text-sm md:text-base
+                      text-gray-800 dark:text-gray-200
+                      group-hover:text-purple-600 dark:group-hover:text-purple-400
+                      transition-colors duration-300"
                     >
                       {skill.name}
                     </p>
@@ -107,11 +124,31 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Footer Note */}
-        <p className="text-center mt-24 text-gray-600 dark:text-gray-400">
-          Constantly learning, improving, and exploring new technologies 🚀
-        </p>
+        {/* Closing Note */}
+        <div className="text-center mt-32">
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium">
+            Always learning. Always building. 🚀
+          </p>
+        </div>
       </div>
+
+      {/* Optional: Add simple CSS animation for fade-in (no extra library needed) */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-on-scroll {
+          opacity: 0;
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 }
