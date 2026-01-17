@@ -186,3 +186,28 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(168, 85, 247, 0.5);
 }
+
+/* ------------------------------
+   ADAPTIVE NAVBAR NAME UNDERLINE
+   (visible & animated in both light & dark modes)
+--------------------------------*/
+.navbar-name-underline {
+  position: absolute;
+  bottom: -6px;               /* Distance from text */
+  left: 0;
+  width: 0;
+  height: 3px;                /* Thickness */
+  background: linear-gradient(to right, #a855f7, #c084fc); /* Purple gradient for light mode */
+  transition: width 0.4s ease;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.5); /* Subtle glow */
+}
+
+.dark .navbar-name-underline {
+  background: linear-gradient(to right, #c084fc, #e9d5ff); /* Lighter purple for dark mode visibility */
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.6);
+}
+
+/* Hover animation: grows from left to right */
+.group:hover .navbar-name-underline {
+  width: 100%;
+}
