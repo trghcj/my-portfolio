@@ -67,7 +67,7 @@ export default function Suggestions() {
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Have a suggestion, collaboration idea,
-            <br /> or just want to say hi? 👋
+            <br /> or just want to say hi? Feel free to drop a message!
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function Suggestions() {
                   disabled:opacity-50 disabled:hover:scale-100
                   transition-all duration-300 shadow-lg shadow-purple-500/20"
               >
-                {loading ? "Sending..." : "Send Message 🚀"}
+                {loading ? "Sending..." : " Send Message "}
               </button>
             </div>
 
@@ -198,7 +198,7 @@ export default function Suggestions() {
           </div>
 
           <p className="mt-10 text-lg md:text-xl text-gray-300">
-            Open to ideas, feedback, and collaborations 💜
+            Open to ideas, feedback and collaborations 
           </p>
         </div>
       </div>
