@@ -91,7 +91,7 @@ export default function Home() {
 
           {/* Resume */}
           <a
-            href="https://drive.google.com/file/d/1RGzT0r5Egsy7EdLf9yOzp_27IBFAhCtQ/view"
+            href="https://drive.google.com/file/d/1NAtJVih8V6GFywjbej6dS6YOsy8rC2si/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="px-7 py-3 md:px-8 md:py-3.5 rounded-full
