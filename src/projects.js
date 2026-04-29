@@ -10,7 +10,7 @@ export const projects = [
   {
     title: "Zynkup – Campus Event Platform",
     desc: "Cross-college event discovery, RSVP, reminders & club management. Currently in beta version. Adding more features like image uploadaing and push notifications.",
-    tech: ["Flutter", "Firebase Auth", "Firestore", "Push Notifications"],
+    tech: ["Flutter", "FastAPI Backend", "REST API Integration", "JWT Auth", "SQLite"],
     live: "https://zynkup-app.netlify.app/",
     github: "https://github.com/trghcj/zynkup-app",
     image: "https://cdn.dribbble.com/userupload/46052742/file/bc9538f4f8b8881f47c78acc03a962a7.png?format=webp&resize=1200x900" // Modern event app mobile mockup
