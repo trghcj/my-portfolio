@@ -1,21 +1,27 @@
-<<<<<<< HEAD
-# React + Vite
+# Divyansh Singh – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hi! I'm Divyansh Singh, a passionate Software Engineer and developer based in India. This repository contains the source code for my personal portfolio. 
 
-Currently, two official plugins are available:
+## About Me
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I am currently pursuing my B.Tech in Computer Science & Engineering (AI) at Maharaja Agrasen Institute of Technology (MAIT). I have hands-on experience building scalable applications, digitizing workflows, and creating beautiful, high-performance user interfaces. 
 
-## React Compiler
+My technical stack revolves around modern web and mobile technologies, including:
+- **Frontend & Mobile**: React, Flutter, Tailwind CSS
+- **Backend**: FastAPI, Flask, Go, Node.js
+- **Databases & Cloud**: Firebase, PostgreSQL
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Feel free to check out the live version of my portfolio to learn more about my projects and professional experience!
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# my-portfolio
-My Portfolio
->>>>>>> 342fad466c5f21754f86e57cd1293e8bb64ab185
+This project is built using:
+- [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- Hosted on [Vercel](https://vercel.com/)
+
+To run the project locally:
+```bash
+npm install
+npm run dev
+```

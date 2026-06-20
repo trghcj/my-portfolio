@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
+import Experience from "./pages/Experience";
 import Suggestions from "./pages/Suggestions";
 
 import { useTheme } from "./context/useTheme";
@@ -13,7 +14,7 @@ function App() {
   const [navOpen, setNavOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
-  const navItems = ["Home", "Projects", "Skills", "Suggestions"];
+  const navItems = ["Home", "Projects", "Skills", "Experience", "Suggestions"];
 
   const handleNavClick = (id) => {
     setNavOpen(false);
@@ -132,6 +133,10 @@ function App() {
           
           <section id="skills" className="min-h-screen scroll-mt-24">
             <Skills />
+          </section>
+          
+          <section id="experience" className="min-h-screen scroll-mt-24">
+            <Experience />
           </section>
           
           <section id="suggestions" className="min-h-screen scroll-mt-24">
