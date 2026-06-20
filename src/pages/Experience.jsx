@@ -5,6 +5,7 @@ export default function Experience() {
     {
       title: "Software Engineering Intern",
       company: "Innoviti Solutions",
+      location: "Remote",
       date: "05/2026 – Present",
       bullets: [
         "Enhanced app stability across the Syntx ecosystem by architecting a global error boundary and OfflineGuard, integrating Firebase Crashlytics to prevent production crashes.",
@@ -16,6 +17,7 @@ export default function Experience() {
     {
       title: "Summer Intern, Business Development Unit",
       company: "Airports Authority of India (AAI)",
+      location: "New Delhi, India",
       date: "06/2025 – 08/2025",
       bullets: [
         "Developed the Airport Authority Linkage App using Flutter and Firebase to digitize Excel-driven workflows and streamline data sharing across airport departments through a centralized platform.",
@@ -29,14 +31,14 @@ export default function Experience() {
     {
       degree: "B.Tech – Computer Science & Engineering (AI)",
       institution: "Maharaja Agrasen Institute of Technology (MAIT)",
-      location: "Delhi, India",
+      location: "New Delhi, India",
       date: "08/2023 – 07/2027",
       score: "CGPA: 8.78/10.0"
     },
     {
       degree: "Class XII (CBSE)",
       institution: "Kendriya Vidyalaya",
-      location: "India",
+      location: "New Delhi, India",
       date: "2022",
       score: "85.5%"
     }
@@ -80,11 +82,16 @@ export default function Experience() {
                       {exp.date}
                     </span>
                   </div>
-                  <ul className="list-disc list-outside ml-5 space-y-2 text-slate-600 dark:text-gray-300">
+                  <ul className="list-disc list-outside ml-5 space-y-2 text-slate-600 dark:text-gray-300 mb-4">
                     {exp.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="leading-relaxed">{bullet}</li>
                     ))}
                   </ul>
+                  {exp.location && (
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-slate-600 dark:text-gray-300 font-medium mt-auto pt-4 border-t border-slate-200 dark:border-slate-700/50">
+                      <span>{exp.location}</span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
