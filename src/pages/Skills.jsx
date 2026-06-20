@@ -42,6 +42,12 @@ export default function Skills() {
     tools: "p-5 md:p-6 scale-95 md:scale-100",
   };
 
+  const categoryHoverClasses = {
+    frontend: "hover:-translate-y-4 hover:scale-[1.06] hover:shadow-[0_15px_40px_rgba(168,85,247,0.25)]",
+    backend: "hover:translate-y-3 hover:scale-[0.97] hover:shadow-[0_2px_10px_rgba(168,85,247,0.15)]",
+    tools: "hover:rotate-6 hover:scale-110 hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]",
+  };
+
   return (
     <div className="relative w-full min-h-screen py-24 md:py-32 flex flex-col justify-center">
 
@@ -75,10 +81,9 @@ export default function Skills() {
                       bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl
                       border border-white/40 dark:border-white/10
                       shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
-                      hover:shadow-[0_8px_30px_rgba(168,85,247,0.15)] dark:hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]
-                      hover:-translate-y-3 hover:scale-[1.03]
                       transition-all duration-500
                       ${categorySizeClasses[category.size]}
+                      ${categoryHoverClasses[category.size]}
                     `}
                   >
                     <div className="mb-4 p-4 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/40 dark:to-purple-900/40 shadow-inner">
