@@ -7,11 +7,9 @@ export default function Skills() {
       size: "frontend",
       skills: [
         { name: "React", icon: "react" },
-        { name: "React Native", icon: "react" },
         { name: "Flutter", icon: "flutter" },
         { name: "Dart", icon: "dart" },
         { name: "Tailwind CSS", icon: "tailwindcss" },
-        { name: "Figma", icon: "figma" },
       ],
     },
     {
@@ -21,9 +19,9 @@ export default function Skills() {
         { name: "Node.js", icon: "nodejs" },
         { name: "Flask", icon: "flask" },
         { name: "Firebase", icon: "firebase" },
-        { name: "MongoDB", icon: "mongodb" },
+        { name: "FastAPI", icon: "fastapi" },
+        { name: "Go", icon: "golang" },
         { name: "PostgreSQL", icon: "postgresql" },
-        { name: "REST API", icon: "api" },
       ],
     },
     {
