@@ -10,13 +10,13 @@ export default function Skills() {
         { name: "Flutter", icon: "flutter" },
         { name: "Dart", icon: "dart" },
         { name: "Tailwind CSS", icon: "tailwindcss" },
+        { name: "JavaScript", icon: "javascript" },
       ],
     },
     {
       title: "Backend & Databases",
       size: "backend",
       skills: [
-        { name: "Node.js", icon: "nodejs" },
         { name: "Flask", icon: "flask" },
         { name: "Firebase", icon: "firebase" },
         { name: "FastAPI", icon: "fastapi" },
