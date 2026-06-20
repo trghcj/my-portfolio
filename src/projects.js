@@ -1,19 +1,26 @@
 export const projects = [
   {
-    title: "Flight One / Airport Management System",
+    title: "Airport Authority Linkage App",
     desc: "Production-grade system used by airport staff. Excel upload → auto-processes 10,000+ flights → generates PDF invoices + real-time dashboard.",
     tech: ["Flutter", "Flask", "Firebase", "Firestore", "Pandas", "Vercel"],
     live: "https://airport-authority-linkage-app.vercel.app/",
     github: "https://github.com/trghcj/airport-auhtority-linkage-app-new-1",
-    image: "https://1000logos.net/wp-content/uploads/2020/09/Air-India-Logo-2007.png?referrer=grok.com" // Professional dashboard mockup
+    image: "/Airport.png"
   },
   {
-    title: "Zynkup – Campus Event Platform",
-    desc: "Cross-college event discovery, RSVP, reminders & club management. Currently in beta version. Adding more features like image uploadaing and push notifications.",
-    tech: ["Flutter", "FastAPI Backend", "REST API Integration", "JWT Auth", "SQLite"],
+    title: "Zynkup – Campus Event & Networking Platform",
+    desc: "A comprehensive cross-college platform for event discovery, dynamic QR ticketing, and club management. Features real-time chat, cloud media sharing, and automated push notifications within a premium, responsive UI.",
+    tech: ["Flutter", "Supabase (PostgreSQL)", "Firebase Auth", "Edge Functions", "Realtime WebSockets"],
     live: "https://zynkup-app.vercel.app/",
     github: "https://github.com/trghcj/zynkup-app",
-    image: "https://cdn.dribbble.com/userupload/46052742/file/bc9538f4f8b8881f47c78acc03a962a7.png?format=webp&resize=1200x900" // Modern event app mobile mockup
+    image: "/zynkup_portfolio.png"
   },
-  // Add more projects here...
+  {
+    title: "Talvix – Streamline Hiring",
+    desc: "The all-in-one hiring platform to source, track, and hire top talent. Simplify your recruitment workflows and drive data-backed decisions.",
+    tech: ["React", "FastAPI", "PostgreSQL (Supabase)", "Tailwind CSS", "Firebase", "Node.js"],
+    live: "https://talvix-six.vercel.app/",
+    github: "https://github.com/trghcj/talvix",
+    image: "/Talvix_Portfolio.png"
+  }
 ];

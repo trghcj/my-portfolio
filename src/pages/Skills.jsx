@@ -1,4 +1,3 @@
-import VideoNeuralBackground from "../components/VideoNeuralBackground";
 import React from "react";
 
 export default function Skills() {
@@ -40,24 +39,21 @@ export default function Skills() {
   ];
 
   const categorySizeClasses = {
-    frontend: "p-7 md:p-8 scale-110",
+    frontend: "p-7 md:p-8 scale-100 md:scale-105",
     backend: "p-6 md:p-7 scale-100",
-    tools: "p-5 md:p-6 scale-95",
+    tools: "p-5 md:p-6 scale-95 md:scale-100",
   };
 
   return (
-    <section className="relative w-full min-h-screen py-24 md:py-32 bg-black overflow-hidden">
-      <VideoNeuralBackground />
+    <div className="relative w-full min-h-screen py-24 md:py-32 flex flex-col justify-center">
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/85 z-10 pointer-events-none" />
-
-      <div className="relative z-20 max-w-7xl mx-auto px-6">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 w-full">
 
         <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 drop-shadow-sm">
             Skills & Technologies
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-3xl mx-auto">
             Tools and technologies I use to build modern, scalable, and impactful applications.
           </p>
         </div>
@@ -65,10 +61,12 @@ export default function Skills() {
         <div className="space-y-28 md:space-y-36">
           {skillCategories.map((category) => (
             <div key={category.title}>
-              <h3 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white relative inline-block">
-                {category.title}
-                <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-1 bg-purple-500 rounded-full" />
-              </h3>
+              <div className="flex justify-center mb-16">
+                <h3 className="text-3xl md:text-4xl font-bold text-center text-slate-900 dark:text-white relative inline-block">
+                  {category.title}
+                  <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-1.5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full" />
+                </h3>
+              </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 justify-items-center">
                 {category.skills.map((skill) => (
@@ -76,24 +74,24 @@ export default function Skills() {
                     key={skill.name}
                     className={`
                       group flex flex-col items-center rounded-3xl
-                      bg-gray-900/70 backdrop-blur-xl
-                      border border-purple-500/20
-                      shadow-[0_0_20px_rgba(168,85,247,0.15)]
-                      hover:shadow-[0_0_45px_rgba(168,85,247,0.35)]
-                      hover:-translate-y-3 hover:scale-105
+                      bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl
+                      border border-white/40 dark:border-white/10
+                      shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
+                      hover:shadow-[0_8px_30px_rgba(168,85,247,0.15)] dark:hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]
+                      hover:-translate-y-3 hover:scale-[1.03]
                       transition-all duration-500
                       ${categorySizeClasses[category.size]}
                     `}
                   >
-                    <div className="mb-4 p-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+                    <div className="mb-4 p-4 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/40 dark:to-purple-900/40 shadow-inner">
                       <img
-                        src={`https://skillicons.dev/icons?i=${skill.icon}&theme=dark`}
+                        src={`https://skillicons.dev/icons?i=${skill.icon}`}
                         alt={skill.name}
-                        className="w-16 h-16 md:w-20 md:h-20 transition-transform group-hover:scale-110"
+                        className="w-16 h-16 md:w-20 md:h-20 transition-transform duration-500 group-hover:scale-110 drop-shadow-md"
                       />
                     </div>
 
-                    <p className="text-sm md:text-base font-medium text-gray-200 group-hover:text-purple-300">
+                    <p className="text-sm md:text-base font-semibold text-slate-700 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors text-center">
                       {skill.name}
                     </p>
                   </div>
@@ -103,13 +101,13 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="text-center mt-24">
-          <p className="text-xl md:text-2xl text-gray-300 font-medium">
+        <div className="text-center mt-32">
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-gray-300 font-medium">
             Always learning. Always building. 
           </p>
         </div>
 
       </div>
-    </section>
+    </div>
   );
 }

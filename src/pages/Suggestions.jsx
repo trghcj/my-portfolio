@@ -6,7 +6,6 @@ import {
   FaLinkedin,
   FaEnvelope,
 } from "react-icons/fa";
-import VideoNeuralBackground from "../components/VideoNeuralBackground"; 
 
 export default function Suggestions() {
   const [status, setStatus] = useState("");
@@ -48,71 +47,63 @@ export default function Suggestions() {
   };
 
   return (
-    <section
-      id="suggestions"
-      className="relative w-full min-h-screen py-24 md:py-32 bg-black overflow-hidden"
-    >
-      {/* === Video Neural Background (glowing connections flow) === */}
-      <VideoNeuralBackground />
-
-      {/* Depth Overlay – balanced for text readability + video glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90 z-10 pointer-events-none" />
+    <div className="relative w-full min-h-screen py-24 md:py-32 flex flex-col justify-center">
 
       {/* Main Content */}
-      <div className="relative z-20 max-w-5xl mx-auto px-6">
+      <div className="relative z-20 max-w-5xl mx-auto px-6 w-full">
         {/* Heading */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-slate-900 dark:text-white tracking-tight drop-shadow-sm">
             Let’s Connect
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">
             Have a suggestion, collaboration idea,
             <br /> or just want to say hi? Feel free to drop a message!
           </p>
         </div>
 
         {/* Contact Form */}
-        <div className="bg-gray-900/70 backdrop-blur-xl rounded-3xl shadow-2xl p-8 md:p-12 
-          border border-purple-500/20 mb-16 md:mb-24
-          hover:shadow-[0_0_60px_rgba(168,85,247,0.3)] transition-all duration-500">
+        <div className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-8 md:p-12 
+          border border-white/40 dark:border-white/10 mb-16 md:mb-24
+          hover:shadow-[0_8px_30px_rgba(168,85,247,0.15)] dark:hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Name */}
             <div>
-              <label className="block text-lg font-semibold mb-3 text-gray-200">
+              <label className="block text-lg font-semibold mb-3 text-slate-700 dark:text-gray-200">
                 Your Name
               </label>
               <input
                 type="text"
                 name="name"
                 disabled={loading}
-                className="w-full px-6 py-4 rounded-xl text-lg bg-gray-800/70
-                  border border-purple-500/30 text-white placeholder-gray-400
-                  focus:ring-4 focus:ring-purple-500/40 focus:border-purple-500/50
-                  transition-all duration-300"
+                className="w-full px-6 py-4 rounded-xl text-lg bg-white/50 dark:bg-gray-800/50
+                  border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500
+                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-indigo-400 dark:focus:border-indigo-500
+                  transition-all duration-300 outline-none"
                 placeholder="Enter your name"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-lg font-semibold mb-3 text-gray-200">
+              <label className="block text-lg font-semibold mb-3 text-slate-700 dark:text-gray-200">
                 Your Email
               </label>
               <input
                 type="email"
                 name="email"
                 disabled={loading}
-                className="w-full px-6 py-4 rounded-xl text-lg bg-gray-800/70
-                  border border-purple-500/30 text-white placeholder-gray-400
-                  focus:ring-4 focus:ring-purple-500/40 focus:border-purple-500/50
-                  transition-all duration-300"
+                className="w-full px-6 py-4 rounded-xl text-lg bg-white/50 dark:bg-gray-800/50
+                  border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500
+                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-indigo-400 dark:focus:border-indigo-500
+                  transition-all duration-300 outline-none"
                 placeholder="your.email@example.com"
               />
             </div>
 
             {/* Message */}
             <div>
-              <label className="block text-lg font-semibold mb-3 text-gray-200">
+              <label className="block text-lg font-semibold mb-3 text-slate-700 dark:text-gray-200">
                 Message / Suggestion
               </label>
               <textarea
@@ -120,10 +111,10 @@ export default function Suggestions() {
                 rows="7"
                 disabled={loading}
                 placeholder="Write your message here..."
-                className="w-full px-6 py-4 rounded-xl text-lg bg-gray-800/70
-                  border border-purple-500/30 text-white placeholder-gray-400
-                  focus:ring-4 focus:ring-purple-500/40 focus:border-purple-500/50
-                  transition-all duration-300 resize-none"
+                className="w-full px-6 py-4 rounded-xl text-lg bg-white/50 dark:bg-gray-800/50
+                  border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500
+                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-indigo-400 dark:focus:border-indigo-500
+                  transition-all duration-300 outline-none resize-none"
               />
             </div>
 
@@ -133,10 +124,10 @@ export default function Suggestions() {
                 type="submit"
                 disabled={loading}
                 className="px-10 md:px-12 py-4 md:py-5 text-lg md:text-xl font-bold text-white rounded-2xl
-                  bg-gradient-to-r from-purple-600 to-pink-600
-                  hover:from-purple-700 hover:to-pink-700 hover:scale-105
+                  bg-gradient-to-r from-purple-600 to-indigo-600
+                  hover:from-purple-500 hover:to-indigo-500 hover:scale-105
                   disabled:opacity-50 disabled:hover:scale-100
-                  transition-all duration-300 shadow-lg shadow-purple-500/20"
+                  transition-all duration-300 shadow-lg shadow-purple-500/30 dark:shadow-purple-900/40"
               >
                 {loading ? "Sending..." : " Send Message "}
               </button>
@@ -148,8 +139,8 @@ export default function Suggestions() {
                 className={`text-center text-lg font-medium p-5 rounded-xl mt-6
                   ${
                     status.includes("✅")
-                      ? "bg-green-900/30 text-green-300 border border-green-500/30"
-                      : "bg-red-900/30 text-red-300 border border-red-500/30"
+                      ? "bg-green-100/50 dark:bg-green-900/30 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-500/30"
+                      : "bg-red-100/50 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-500/30"
                   }`}
               >
                 {status}
@@ -160,7 +151,7 @@ export default function Suggestions() {
 
         {/* Alternative Connect Section */}
         <div className="text-center">
-          <h3 className="text-3xl md:text-4xl font-bold mb-8 text-white">
+          <h3 className="text-3xl md:text-4xl font-extrabold mb-8 text-slate-900 dark:text-white">
             Or Connect With Me
           </h3>
 
@@ -169,39 +160,39 @@ export default function Suggestions() {
               href="https://github.com/trghcj"
               target="_blank"
               rel="noreferrer"
-              className="p-5 md:p-6 rounded-2xl bg-gray-900/70 backdrop-blur-xl
-                border border-purple-500/20 hover:border-purple-500/50
-                hover:bg-purple-900/30 hover:scale-110 transition-all duration-300"
+              className="p-5 md:p-6 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl
+                border border-white/40 dark:border-white/10 hover:border-indigo-300 dark:hover:border-indigo-500/50
+                hover:bg-indigo-50 dark:hover:bg-indigo-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
             >
-              <FaGithub className="text-3xl md:text-4xl text-white" />
+              <FaGithub className="text-3xl md:text-4xl text-slate-700 dark:text-white" />
             </a>
 
             <a
               href="https://www.linkedin.com/in/divyansh-singh-332b741aa/"
               target="_blank"
               rel="noreferrer"
-              className="p-5 md:p-6 rounded-2xl bg-gray-900/70 backdrop-blur-xl
-                border border-purple-500/20 hover:border-purple-500/50
-                hover:bg-blue-900/30 hover:scale-110 transition-all duration-300"
+              className="p-5 md:p-6 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl
+                border border-white/40 dark:border-white/10 hover:border-sky-300 dark:hover:border-sky-500/50
+                hover:bg-sky-50 dark:hover:bg-sky-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
             >
-              <FaLinkedin className="text-3xl md:text-4xl text-blue-400" />
+              <FaLinkedin className="text-3xl md:text-4xl text-sky-600 dark:text-sky-400" />
             </a>
 
             <a
               href="mailto:ms1778937@gmail.com"
-              className="p-5 md:p-6 rounded-2xl bg-gray-900/70 backdrop-blur-xl
-                border border-purple-500/20 hover:border-purple-500/50
-                hover:bg-pink-900/30 hover:scale-110 transition-all duration-300"
+              className="p-5 md:p-6 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl
+                border border-white/40 dark:border-white/10 hover:border-pink-300 dark:hover:border-pink-500/50
+                hover:bg-pink-50 dark:hover:bg-pink-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
             >
-              <FaEnvelope className="text-3xl md:text-4xl text-pink-400" />
+              <FaEnvelope className="text-3xl md:text-4xl text-pink-600 dark:text-pink-400" />
             </a>
           </div>
 
-          <p className="mt-10 text-lg md:text-xl text-gray-300">
+          <p className="mt-10 text-lg md:text-xl text-slate-600 dark:text-gray-400 font-medium">
             Open to ideas, feedback and collaborations 
           </p>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

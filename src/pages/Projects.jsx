@@ -1,24 +1,15 @@
 import Tilt from "react-parallax-tilt";
 import { projects } from "../projects";
 import { ExternalLink, Github } from "lucide-react";
-import VideoNeuralBackground from "../components/VideoNeuralBackground"; 
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="relative py-24 md:py-32 min-h-screen bg-black overflow-hidden flex flex-col justify-center"
-    >
-      {/* === Video Neural Background (glowing blue connections flow) === */}
-      <VideoNeuralBackground />
-
-      {/* Depth Overlay – lighter to let video glow shine through */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/85 z-10 pointer-events-none" />
+    <div className="relative py-24 md:py-32 w-full flex flex-col justify-center">
 
       {/* Main Content */}
       <div className="relative z-20 container mx-auto px-6 max-w-7xl">
         {/* Heading */}
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-20 md:mb-24 text-white tracking-tight">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center mb-20 md:mb-24 text-slate-900 dark:text-white tracking-tight drop-shadow-sm">
           My Projects
         </h2>
 
@@ -27,44 +18,46 @@ export default function Projects() {
           {projects.map((p, i) => (
             <Tilt
               key={i}
-              tiltMaxAngleX={12}
-              tiltMaxAngleY={12}
-              scale={1.06}
+              tiltMaxAngleX={8}
+              tiltMaxAngleY={8}
+              scale={1.02}
               transitionSpeed={500}
               glareEnable
-              glareMaxOpacity={0.25}
+              glareMaxOpacity={0.15}
               glareColor="#a855f7"
               glarePosition="all"
               className="h-full"
             >
               <div
-                className="relative bg-gray-900/70 backdrop-blur-xl
-                  rounded-2xl overflow-hidden
-                  border border-purple-500/20
-                  shadow-[0_0_35px_rgba(168,85,247,0.18)]
-                  hover:shadow-[0_0_60px_rgba(168,85,247,0.4)]
+                className="relative bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl
+                  rounded-3xl overflow-hidden
+                  border border-white/40 dark:border-white/10
+                  shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
+                  hover:shadow-[0_8px_30px_rgba(168,85,247,0.15)] dark:hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]
                   transition-all duration-500
                   flex flex-col h-full"
               >
                 {/* Project Image */}
-                <div className="relative overflow-hidden">
-                  <img
-                    src={p.image || "https://via.placeholder.com/600x400"}
-                    alt={p.title}
-                    loading="lazy"
-                    className="w-full h-56 md:h-64 object-cover
-                      transition-transform duration-700 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+                <div className="relative overflow-hidden p-2">
+                  <div className="rounded-2xl overflow-hidden relative">
+                    <img
+                      src={p.image || "https://via.placeholder.com/600x400"}
+                      alt={p.title}
+                      loading="lazy"
+                      className="w-full h-56 md:h-64 object-cover object-top
+                        transition-transform duration-700 hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent pointer-events-none" />
+                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6 md:p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-slate-900 dark:text-white">
                     {p.title}
                   </h3>
 
-                  <p className="text-gray-300 mb-6 flex-grow leading-relaxed text-sm md:text-base">
+                  <p className="text-slate-600 dark:text-gray-300 mb-6 flex-grow leading-relaxed text-sm md:text-base">
                     {p.desc}
                   </p>
 
@@ -73,10 +66,10 @@ export default function Projects() {
                     {p.tech.map((t, j) => (
                       <span
                         key={j}
-                        className="px-3 md:px-4 py-1 text-xs md:text-sm rounded-full font-medium
-                          bg-purple-500/10 text-purple-300
-                          border border-purple-500/30
-                          hover:bg-purple-500/20 transition"
+                        className="px-3 md:px-4 py-1.5 text-xs md:text-sm rounded-full font-semibold
+                          bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300
+                          border border-indigo-200 dark:border-indigo-700/50
+                          transition-colors duration-300 hover:bg-indigo-200 dark:hover:bg-indigo-800/40"
                       >
                         {t}
                       </span>
@@ -84,15 +77,15 @@ export default function Projects() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-5 md:gap-6 items-center mt-auto">
+                  <div className="flex gap-5 md:gap-6 items-center mt-auto pt-4 border-t border-slate-200 dark:border-slate-800">
                     {p.live && (
                       <a
                         href={p.live}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Live demo of ${p.title}`}
-                        className="flex items-center gap-2 font-medium text-sm md:text-base
-                          text-purple-400 hover:text-purple-300 hover:underline"
+                        className="flex items-center gap-2 font-semibold text-sm md:text-base
+                          text-purple-600 dark:text-purple-400 hover:text-purple-500 hover:underline transition-colors"
                       >
                         <ExternalLink size={18} />
                         Live Demo
@@ -104,8 +97,8 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Source code of ${p.title}`}
-                      className="flex items-center gap-2 font-medium text-sm md:text-base
-                        text-gray-300 hover:text-purple-400 hover:underline"
+                      className="flex items-center gap-2 font-semibold text-sm md:text-base
+                        text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:underline transition-colors"
                     >
                       <Github size={18} />
                       Source Code
@@ -118,10 +111,10 @@ export default function Projects() {
         </div>
 
         {/* Footer Note */}
-        <p className="text-center mt-20 md:mt-28 text-gray-400 text-lg md:text-xl">
+        <p className="text-center mt-20 md:mt-28 text-slate-500 dark:text-slate-400 font-medium text-lg md:text-xl">
           More projects coming soon...
         </p>
       </div>
-    </section>
+    </div>
   );
 }
