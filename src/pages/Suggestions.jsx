@@ -124,8 +124,8 @@ export default function Suggestions() {
                 type="submit"
                 disabled={loading}
                 className="px-10 md:px-12 py-4 md:py-5 text-lg md:text-xl font-bold text-white rounded-2xl
-                  bg-gradient-to-r from-emerald-600 to-emerald-600
-                  hover:from-emerald-500 hover:to-emerald-500 hover:scale-105
+                  bg-gradient-to-r from-emerald-600 to-teal-600
+                  hover:from-emerald-500 hover:to-teal-500 hover:scale-105
                   disabled:opacity-50 disabled:hover:scale-100
                   transition-all duration-300 shadow-lg shadow-emerald-500/30 dark:shadow-emerald-900/40"
               >

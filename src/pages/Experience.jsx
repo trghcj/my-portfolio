@@ -65,7 +65,7 @@ export default function Experience() {
           <div>
             <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-10 inline-block relative">
               Professional Experience
-              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-emerald-500 to-emerald-500 rounded-full" />
+              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" />
             </h3>
 
             <div className="space-y-6 lg:space-y-8">
@@ -117,7 +117,7 @@ export default function Experience() {
           <div>
             <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-10 inline-block relative">
               Education
-              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full" />
+              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-teal-500 to-teal-500 rounded-full" />
             </h3>
 
             <div className="space-y-6 lg:space-y-8">

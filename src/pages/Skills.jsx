@@ -43,9 +43,9 @@ export default function Skills() {
   };
 
   const categoryHoverClasses = {
-    frontend: "hover:-translate-y-4 hover:scale-[1.06] hover:shadow-[0_15px_40px_rgba(16,185,129,0.25)]",
-    backend: "hover:translate-y-3 hover:scale-[0.97] hover:shadow-[0_2px_10px_rgba(16,185,129,0.15)]",
-    tools: "hover:rotate-6 hover:scale-110 hover:shadow-[0_10px_30px_rgba(16,185,129,0.2)]",
+    frontend: "hover:-translate-y-4 hover:scale-[1.06] hover:border-emerald-500/30 dark:hover:border-emerald-500/30",
+    backend: "hover:translate-y-3 hover:scale-[0.97] hover:border-emerald-500/30 dark:hover:border-emerald-500/30",
+    tools: "hover:rotate-6 hover:scale-110 hover:border-emerald-500/30 dark:hover:border-emerald-500/30",
   };
 
   return (
@@ -68,7 +68,7 @@ export default function Skills() {
               <div className="flex justify-center mb-16">
                 <h3 className="text-3xl md:text-4xl font-bold text-center text-slate-900 dark:text-white relative inline-block">
                   {category.title}
-                  <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-1.5 bg-gradient-to-r from-emerald-500 to-emerald-500 rounded-full" />
+                  <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" />
                 </h3>
               </div>
 
@@ -86,11 +86,11 @@ export default function Skills() {
                       ${categoryHoverClasses[category.size]}
                     `}
                   >
-                    <div className="mb-4 p-4 rounded-2xl bg-gradient-to-br from-emerald-100 to-emerald-100 dark:from-emerald-900/40 dark:to-emerald-900/40 shadow-inner">
+                    <div className="mb-4 w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-all duration-300">
                       <img
                         src={`https://skillicons.dev/icons?i=${skill.icon}`}
                         alt={skill.name}
-                        className="w-16 h-16 md:w-20 md:h-20 transition-transform duration-500 group-hover:scale-110 drop-shadow-md"
+                        className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-sm"
                       />
                     </div>
 

@@ -33,9 +33,9 @@ export default function Projects() {
                   rounded-3xl overflow-hidden
                   border border-white/40 dark:border-white/10
                   shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
-                  hover:shadow-[0_8px_30px_rgba(16,185,129,0.15)] dark:hover:shadow-[0_8px_30px_rgba(16,185,129,0.2)]
-                  transition-all duration-500
-                  flex flex-col h-full"
+                  hover:border-emerald-500/30 dark:hover:border-emerald-500/30
+                  transition-all duration-300
+                  flex flex-col h-full group"
               >
                 {/* Project Image */}
                 <div className="relative overflow-hidden p-2">
@@ -66,10 +66,9 @@ export default function Projects() {
                     {p.tech.map((t, j) => (
                       <span
                         key={j}
-                        className="px-3 md:px-4 py-1.5 text-xs md:text-sm rounded-full font-semibold
-                          bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300
-                          border border-emerald-200 dark:border-emerald-700/50
-                          transition-colors duration-300 hover:bg-emerald-200 dark:hover:bg-emerald-800/40"
+                        className="px-3 md:px-4 py-1.5 text-xs md:text-sm rounded-full font-medium
+                          bg-emerald-500/10 text-emerald-700/80 dark:text-emerald-400/80
+                          transition-colors duration-300 hover:bg-emerald-500/20"
                       >
                         {t}
                       </span>

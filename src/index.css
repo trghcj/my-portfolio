@@ -109,13 +109,13 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-emerald-500 to-emerald-700 
+    @apply bg-gradient-to-b from-emerald-500 to-teal-700 
            rounded-full border-2 border-transparent 
            bg-clip-padding;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply from-emerald-600 to-emerald-800;
+    @apply from-emerald-600 to-teal-800;
   }
 
   /* Dark mode scrollbar */
@@ -124,7 +124,7 @@
   }
 
   .dark ::-webkit-scrollbar-thumb {
-    @apply from-emerald-600 to-emerald-800;
+    @apply from-emerald-600 to-teal-800;
   }
 }
 

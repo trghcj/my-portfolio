@@ -61,8 +61,8 @@ export default function Home({ onNavigate }) {
           <button
             onClick={() => onNavigate && onNavigate('projects')}
             className="px-8 py-3.5 rounded-full font-semibold text-white
-              bg-gradient-to-r from-emerald-600 to-emerald-600
-              hover:from-emerald-500 hover:to-emerald-500
+              bg-gradient-to-r from-emerald-600 to-teal-600
+              hover:from-emerald-500 hover:to-teal-500
               shadow-lg shadow-emerald-500/30 dark:shadow-emerald-900/40
               transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
           >
@@ -88,7 +88,7 @@ export default function Home({ onNavigate }) {
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 rounded-full font-semibold text-white
-              bg-gradient-to-r from-teal-500 to-emerald-500
+              bg-gradient-to-r from-teal-500 to-teal-500
               hover:from-teal-400 hover:to-emerald-400
               shadow-lg shadow-sky-500/30 dark:shadow-sky-900/40
               transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2"
