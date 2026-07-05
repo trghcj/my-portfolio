@@ -22,5 +22,13 @@ export const projects = [
     live: "https://talvix-six.vercel.app/",
     github: "https://github.com/trghcj/talvix",
     image: "/Talvix_Portfolio.png"
+  },
+  {
+    title: "ClipNest – Intelligent Bookmark Management",
+    desc: "A smart digital library supercharged by Google Gemini AI. Automatically categorizes, summarizes, and understands saved content like PDFs, YouTube videos, and articles using natural language semantic search.",
+    tech: ["React", "FastAPI", "PostgreSQL", "Google Gemini AI", "Tailwind CSS"],
+    live: "https://clipnest-tau.vercel.app/",
+    github: "https://github.com/trghcj/ClipNest",
+    image: "/clipnest.png"
   }
 ];
