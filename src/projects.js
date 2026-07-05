@@ -1,6 +1,6 @@
 export const projects = [
   {
-    title: "Airport Authority Linkage App",
+    title: "Flight One / Airport Management System",
     desc: "Production-grade system used by airport staff. Excel upload → auto-processes 10,000+ flights → generates PDF invoices + real-time dashboard.",
     tech: ["Flutter", "Flask", "Firebase", "Firestore", "Pandas", "Vercel"],
     live: "https://airport-authority-linkage-app.vercel.app/",
@@ -8,27 +8,27 @@ export const projects = [
     image: "/Airport.png"
   },
   {
-    title: "Zynkup – Campus Event & Networking Platform",
-    desc: "A comprehensive cross-college platform for event discovery, dynamic QR ticketing, and club management. Features real-time chat, cloud media sharing, and automated push notifications within a premium, responsive UI.",
-    tech: ["Flutter", "Supabase (PostgreSQL)", "Firebase Auth", "Edge Functions", "Realtime WebSockets"],
+    title: "Zynkup – Campus Event Platform",
+    desc: "Cross-college event discovery, RSVP, reminders & club management. Currently in beta version. Adding more features like image uploading and push notifications.",
+    tech: ["Flutter", "FastAPI Backend", "REST API Integration", "JWT Auth", "SQLite"],
     live: "https://zynkup-app.vercel.app/",
     github: "https://github.com/trghcj/zynkup-app",
-    image: "/zynkup_portfolio.png"
+    image: "/Zynkup_portfolio.png.jpeg"
   },
   {
     title: "Talvix – Streamline Hiring",
-    desc: "The all-in-one hiring platform to source, track, and hire top talent. Simplify your recruitment workflows and drive data-backed decisions.",
-    tech: ["React", "FastAPI", "PostgreSQL (Supabase)", "Tailwind CSS", "Firebase", "Node.js"],
+    desc: "Streamline Hiring. Track Talent. Drive Decisions. A comprehensive platform to manage hiring processes and track potential candidates effectively.",
+    tech: ["React", "Tailwind CSS", "Firebase", "Node.js"],
     live: "https://talvix-six.vercel.app/",
     github: "https://github.com/trghcj/talvix",
-    image: "/Talvix_Portfolio.png"
+    image: "/Talvix_Portfolio.png.jpeg"
   },
   {
-    title: "ClipNest – Intelligent Bookmark Management",
-    desc: "A smart digital library supercharged by Google Gemini AI. Automatically categorizes, summarizes, and understands saved content like PDFs, YouTube videos, and articles using natural language semantic search.",
-    tech: ["React", "FastAPI", "PostgreSQL", "Google Gemini AI", "Tailwind CSS"],
+    title: "ClipNest – AI Bookmark Manager",
+    desc: "An intelligent, AI-powered bookmark manager that automatically extracts metadata, generates summaries, and enables semantic search for web pages, YouTube videos, and PDFs.",
+    tech: ["React", "FastAPI", "PostgreSQL (pgvector)", "Gemini 1.5 Flash", "Chrome Extension"],
     live: "https://clipnest-tau.vercel.app/",
     github: "https://github.com/trghcj/ClipNest",
-    image: "/clipnest.png"
+    image: "/clipnest_portfolio.png.jpeg"
   }
 ];
