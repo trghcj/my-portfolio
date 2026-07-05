@@ -18,7 +18,7 @@ export const projects = [
   {
     title: "Talvix – Streamline Hiring",
     desc: "Streamline Hiring. Track Talent. Drive Decisions. A comprehensive platform to manage hiring processes and track potential candidates effectively.",
-    tech: ["React", "Tailwind CSS", "Firebase", "Node.js"],
+    tech: ["React", "Tailwind CSS", "Firebase", "FastAPI", "PostgreSQL (Supabase)"],
     live: "https://talvix-six.vercel.app/",
     github: "https://github.com/trghcj/talvix",
     image: "/Talvix_Portfolio.png.jpeg"
