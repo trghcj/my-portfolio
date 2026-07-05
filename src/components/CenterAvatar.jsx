@@ -4,7 +4,7 @@ export default function CenterAvatar() {
       <div className="relative avatar-float">
         
         {/* Glow */}
-        <div className="absolute inset-0 rounded-full blur-3xl bg-purple-500/40 animate-pulse" />
+        <div className="absolute inset-0 rounded-full blur-3xl bg-emerald-500/40 animate-pulse" />
         <div className="absolute inset-0 rounded-full blur-2xl bg-blue-500/30" />
 
         {/* Avatar (LinkedIn / GitHub image) */}

@@ -43,9 +43,9 @@ export default function Skills() {
   };
 
   const categoryHoverClasses = {
-    frontend: "hover:-translate-y-4 hover:scale-[1.06] hover:shadow-[0_15px_40px_rgba(168,85,247,0.25)]",
-    backend: "hover:translate-y-3 hover:scale-[0.97] hover:shadow-[0_2px_10px_rgba(168,85,247,0.15)]",
-    tools: "hover:rotate-6 hover:scale-110 hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]",
+    frontend: "hover:-translate-y-4 hover:scale-[1.06] hover:shadow-[0_15px_40px_rgba(16,185,129,0.25)]",
+    backend: "hover:translate-y-3 hover:scale-[0.97] hover:shadow-[0_2px_10px_rgba(16,185,129,0.15)]",
+    tools: "hover:rotate-6 hover:scale-110 hover:shadow-[0_10px_30px_rgba(16,185,129,0.2)]",
   };
 
   return (
@@ -68,7 +68,7 @@ export default function Skills() {
               <div className="flex justify-center mb-16">
                 <h3 className="text-3xl md:text-4xl font-bold text-center text-slate-900 dark:text-white relative inline-block">
                   {category.title}
-                  <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-1.5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full" />
+                  <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-28 h-1.5 bg-gradient-to-r from-emerald-500 to-emerald-500 rounded-full" />
                 </h3>
               </div>
 
@@ -86,7 +86,7 @@ export default function Skills() {
                       ${categoryHoverClasses[category.size]}
                     `}
                   >
-                    <div className="mb-4 p-4 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/40 dark:to-purple-900/40 shadow-inner">
+                    <div className="mb-4 p-4 rounded-2xl bg-gradient-to-br from-emerald-100 to-emerald-100 dark:from-emerald-900/40 dark:to-emerald-900/40 shadow-inner">
                       <img
                         src={`https://skillicons.dev/icons?i=${skill.icon}`}
                         alt={skill.name}
@@ -94,7 +94,7 @@ export default function Skills() {
                       />
                     </div>
 
-                    <p className="text-sm md:text-base font-semibold text-slate-700 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors text-center">
+                    <p className="text-sm md:text-base font-semibold text-slate-700 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors text-center">
                       {skill.name}
                     </p>
                   </div>

@@ -51,7 +51,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.025em;
 
-  background: linear-gradient(135deg, #a855f7, #c084fc);
+  background: linear-gradient(135deg, #10b981, #34d399);
   color: #ffffff;
 
   text-decoration: none;
@@ -62,7 +62,7 @@ body {
 }
 
 .quick-link:hover {
-  background: linear-gradient(135deg, #9333ea, #a855f7);
+  background: linear-gradient(135deg, #059669, #10b981);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
 }
@@ -75,12 +75,12 @@ body {
    TEXT SELECTION
 --------------------------------*/
 ::selection {
-  background-color: #a855f7;
+  background-color: #10b981;
   color: #ffffff;
 }
 
 ::-moz-selection {
-  background-color: #a855f7;
+  background-color: #10b981;
   color: #ffffff;
 }
 
@@ -97,13 +97,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#7c3aed, #a855f7);
+  background: linear-gradient(#047857, #10b981);
   border-radius: 10px;
   border: 2px solid #0f0f0f;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#6d28d9, #9333ea);
+  background: linear-gradient(#065f46, #059669);
 }
 
 /* ------------------------------
@@ -119,19 +119,19 @@ body {
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#7c3aed, #a855f7);
+  background: linear-gradient(#047857, #10b981);
   border-color: #000000;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#6d28d9, #9333ea);
+  background: linear-gradient(#065f46, #059669);
 }
 
 /* ------------------------------
    FOCUS STYLES (Accessibility)
 --------------------------------*/
 :focus-visible {
-  outline: 2px solid #a855f7;
+  outline: 2px solid #10b981;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -163,7 +163,7 @@ body {
   right: 2rem;
   width: 3.5rem;
   height: 3.5rem;
-  background: linear-gradient(135deg, #a855f7, #c084fc);
+  background: linear-gradient(135deg, #10b981, #34d399);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -197,13 +197,13 @@ body {
   left: 0;
   width: 0;
   height: 3px;                /* Thickness */
-  background: linear-gradient(to right, #a855f7, #c084fc); /* Purple gradient for light mode */
+  background: linear-gradient(to right, #10b981, #34d399); /* Purple gradient for light mode */
   transition: width 0.4s ease;
   box-shadow: 0 0 8px rgba(168, 85, 247, 0.5); /* Subtle glow */
 }
 
 .dark .navbar-name-underline {
-  background: linear-gradient(to right, #c084fc, #e9d5ff); /* Lighter purple for dark mode visibility */
+  background: linear-gradient(to right, #34d399, #a7f3d0); /* Lighter purple for dark mode visibility */
   box-shadow: 0 0 10px rgba(192, 132, 252, 0.6);
 }
 

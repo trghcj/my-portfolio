@@ -65,7 +65,7 @@ export default function Suggestions() {
         {/* Contact Form */}
         <div className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-8 md:p-12 
           border border-white/40 dark:border-white/10 mb-16 md:mb-24
-          hover:shadow-[0_8px_30px_rgba(168,85,247,0.15)] dark:hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)] transition-all duration-500">
+          hover:shadow-[0_8px_30px_rgba(16,185,129,0.15)] dark:hover:shadow-[0_8px_30px_rgba(16,185,129,0.2)] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Name */}
             <div>
@@ -78,7 +78,7 @@ export default function Suggestions() {
                 disabled={loading}
                 className="w-full px-6 py-4 rounded-xl text-lg bg-white/50 dark:bg-gray-800/50
                   border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500
-                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-indigo-400 dark:focus:border-indigo-500
+                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-emerald-400 dark:focus:border-emerald-500
                   transition-all duration-300 outline-none"
                 placeholder="Enter your name"
               />
@@ -95,7 +95,7 @@ export default function Suggestions() {
                 disabled={loading}
                 className="w-full px-6 py-4 rounded-xl text-lg bg-white/50 dark:bg-gray-800/50
                   border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500
-                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-indigo-400 dark:focus:border-indigo-500
+                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-emerald-400 dark:focus:border-emerald-500
                   transition-all duration-300 outline-none"
                 placeholder="your.email@example.com"
               />
@@ -113,7 +113,7 @@ export default function Suggestions() {
                 placeholder="Write your message here..."
                 className="w-full px-6 py-4 rounded-xl text-lg bg-white/50 dark:bg-gray-800/50
                   border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500
-                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-indigo-400 dark:focus:border-indigo-500
+                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-emerald-400 dark:focus:border-emerald-500
                   transition-all duration-300 outline-none resize-none"
               />
             </div>
@@ -124,10 +124,10 @@ export default function Suggestions() {
                 type="submit"
                 disabled={loading}
                 className="px-10 md:px-12 py-4 md:py-5 text-lg md:text-xl font-bold text-white rounded-2xl
-                  bg-gradient-to-r from-purple-600 to-indigo-600
-                  hover:from-purple-500 hover:to-indigo-500 hover:scale-105
+                  bg-gradient-to-r from-emerald-600 to-emerald-600
+                  hover:from-emerald-500 hover:to-emerald-500 hover:scale-105
                   disabled:opacity-50 disabled:hover:scale-100
-                  transition-all duration-300 shadow-lg shadow-purple-500/30 dark:shadow-purple-900/40"
+                  transition-all duration-300 shadow-lg shadow-emerald-500/30 dark:shadow-emerald-900/40"
               >
                 {loading ? "Sending..." : " Send Message "}
               </button>
@@ -161,8 +161,8 @@ export default function Suggestions() {
               target="_blank"
               rel="noreferrer"
               className="p-5 md:p-6 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl
-                border border-white/40 dark:border-white/10 hover:border-indigo-300 dark:hover:border-indigo-500/50
-                hover:bg-indigo-50 dark:hover:bg-indigo-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
+                border border-white/40 dark:border-white/10 hover:border-emerald-300 dark:hover:border-emerald-500/50
+                hover:bg-emerald-50 dark:hover:bg-emerald-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
             >
               <FaGithub className="text-3xl md:text-4xl text-slate-700 dark:text-white" />
             </a>
@@ -181,10 +181,10 @@ export default function Suggestions() {
             <a
               href="mailto:ms1778937@gmail.com"
               className="p-5 md:p-6 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl
-                border border-white/40 dark:border-white/10 hover:border-pink-300 dark:hover:border-pink-500/50
-                hover:bg-pink-50 dark:hover:bg-pink-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
+                border border-white/40 dark:border-white/10 hover:border-emerald-300 dark:hover:border-emerald-500/50
+                hover:bg-emerald-50 dark:hover:bg-emerald-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
             >
-              <FaEnvelope className="text-3xl md:text-4xl text-pink-600 dark:text-pink-400" />
+              <FaEnvelope className="text-3xl md:text-4xl text-emerald-600 dark:text-emerald-400" />
             </a>
           </div>
 

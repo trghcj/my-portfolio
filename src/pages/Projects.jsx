@@ -24,7 +24,7 @@ export default function Projects() {
               transitionSpeed={500}
               glareEnable
               glareMaxOpacity={0.15}
-              glareColor="#a855f7"
+              glareColor="#10b981"
               glarePosition="all"
               className="h-full"
             >
@@ -33,7 +33,7 @@ export default function Projects() {
                   rounded-3xl overflow-hidden
                   border border-white/40 dark:border-white/10
                   shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
-                  hover:shadow-[0_8px_30px_rgba(168,85,247,0.15)] dark:hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)]
+                  hover:shadow-[0_8px_30px_rgba(16,185,129,0.15)] dark:hover:shadow-[0_8px_30px_rgba(16,185,129,0.2)]
                   transition-all duration-500
                   flex flex-col h-full"
               >
@@ -67,9 +67,9 @@ export default function Projects() {
                       <span
                         key={j}
                         className="px-3 md:px-4 py-1.5 text-xs md:text-sm rounded-full font-semibold
-                          bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300
-                          border border-indigo-200 dark:border-indigo-700/50
-                          transition-colors duration-300 hover:bg-indigo-200 dark:hover:bg-indigo-800/40"
+                          bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300
+                          border border-emerald-200 dark:border-emerald-700/50
+                          transition-colors duration-300 hover:bg-emerald-200 dark:hover:bg-emerald-800/40"
                       >
                         {t}
                       </span>
@@ -85,7 +85,7 @@ export default function Projects() {
                         rel="noopener noreferrer"
                         aria-label={`Live demo of ${p.title}`}
                         className="flex items-center gap-2 font-semibold text-sm md:text-base
-                          text-purple-600 dark:text-purple-400 hover:text-purple-500 hover:underline transition-colors"
+                          text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 hover:underline transition-colors"
                       >
                         <ExternalLink size={18} />
                         Live Demo

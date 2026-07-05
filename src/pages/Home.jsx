@@ -11,12 +11,12 @@ export default function Home({ onNavigate }) {
 
         {/* Avatar */}
         <div className="relative mx-auto mb-10 md:mb-12 w-40 h-40 md:w-44 md:h-44">
-          <div className="absolute inset-0 rounded-full blur-3xl bg-purple-600/30 animate-pulse-slow" />
+          <div className="absolute inset-0 rounded-full blur-3xl bg-emerald-600/30 animate-pulse-slow" />
           <img
             src="https://github.com/trghcj.png"
             alt="Divyansh Singh"
-            className="relative w-full h-full rounded-full border-4 border-purple-500/80
-              shadow-[0_0_60px_rgba(168,85,247,0.4),0_0_120px_rgba(168,85,247,0.2)]
+            className="relative w-full h-full rounded-full border-4 border-emerald-500/80
+              shadow-[0_0_60px_rgba(16,185,129,0.4),0_0_120px_rgba(16,185,129,0.2)]
               object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>
@@ -25,7 +25,7 @@ export default function Home({ onNavigate }) {
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-5 tracking-tight drop-shadow-sm">
           Hi, I&apos;m{" "}
           <span className="relative inline-block group">
-            <span className="bg-gradient-to-r from-purple-600 to-sky-500 bg-clip-text text-transparent">Divyansh Singh</span>
+            <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Divyansh Singh</span>
             <span className="navbar-name-underline" />
           </span>
         </h1>
@@ -61,9 +61,9 @@ export default function Home({ onNavigate }) {
           <button
             onClick={() => onNavigate && onNavigate('projects')}
             className="px-8 py-3.5 rounded-full font-semibold text-white
-              bg-gradient-to-r from-purple-600 to-indigo-600
-              hover:from-purple-500 hover:to-indigo-500
-              shadow-lg shadow-purple-500/30 dark:shadow-purple-900/40
+              bg-gradient-to-r from-emerald-600 to-emerald-600
+              hover:from-emerald-500 hover:to-emerald-500
+              shadow-lg shadow-emerald-500/30 dark:shadow-emerald-900/40
               transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
           >
             View Projects
@@ -73,10 +73,10 @@ export default function Home({ onNavigate }) {
           <button
             onClick={() => onNavigate && onNavigate('skills')}
             className="px-8 py-3.5 rounded-full font-semibold
-              text-purple-700 dark:text-purple-300
-              bg-purple-100/50 dark:bg-purple-900/20 backdrop-blur-sm
-              border border-purple-300 dark:border-purple-700/50
-              hover:bg-purple-200/50 dark:hover:bg-purple-800/40
+              text-emerald-700 dark:text-emerald-300
+              bg-emerald-100/50 dark:bg-emerald-900/20 backdrop-blur-sm
+              border border-emerald-300 dark:border-emerald-700/50
+              hover:bg-emerald-200/50 dark:hover:bg-emerald-800/40
               transition-all duration-300 transform hover:-translate-y-1"
           >
             Skills
@@ -88,8 +88,8 @@ export default function Home({ onNavigate }) {
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 rounded-full font-semibold text-white
-              bg-gradient-to-r from-sky-500 to-indigo-500
-              hover:from-sky-400 hover:to-indigo-400
+              bg-gradient-to-r from-teal-500 to-emerald-500
+              hover:from-teal-400 hover:to-emerald-400
               shadow-lg shadow-sky-500/30 dark:shadow-sky-900/40
               transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2"
           >
@@ -115,7 +115,7 @@ export default function Home({ onNavigate }) {
             target="_blank"
             rel="noreferrer"
             className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-full shadow-sm hover:shadow-md 
-            hover:text-purple-600 dark:hover:text-purple-400 hover:scale-110 transition-all duration-300"
+            hover:text-emerald-600 dark:hover:text-emerald-400 hover:scale-110 transition-all duration-300"
           >
             <FaGithub size={28} />
           </a>
@@ -131,7 +131,7 @@ export default function Home({ onNavigate }) {
           <a
             href="mailto:ms1778937@gmail.com"
             className="p-3 bg-white/50 dark:bg-slate-800/50 rounded-full shadow-sm hover:shadow-md 
-            hover:text-pink-600 dark:hover:text-pink-400 hover:scale-110 transition-all duration-300"
+            hover:text-emerald-600 dark:hover:text-emerald-400 hover:scale-110 transition-all duration-300"
           >
             <FaEnvelope size={28} />
           </a>

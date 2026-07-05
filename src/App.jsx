@@ -30,8 +30,8 @@ function App() {
         
         {/* Background gradient dark blue mixture */}
         <div className="fixed inset-0 pointer-events-none z-0 
-          bg-gradient-to-br from-indigo-100 via-white to-sky-100
-          dark:from-slate-950 dark:via-indigo-950/40 dark:to-slate-900
+          bg-gradient-to-br from-emerald-100 via-white to-teal-100
+          dark:from-slate-950 dark:via-emerald-950/40 dark:to-slate-900
           opacity-80 transition-colors duration-500" />
 
         {/* NAVBAR */}
@@ -46,10 +46,10 @@ function App() {
             <button
               onClick={() => handleNavClick('home')}
               className="relative inline-block group text-2xl md:text-3xl font-extrabold tracking-tight
-              bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 
+              bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-700 
               bg-clip-text text-transparent
-              drop-shadow-[0_2px_6px_rgba(168,85,247,0.6)] 
-              dark:drop-shadow-[0_0_12px_rgba(168,85,247,0.9)]
+              drop-shadow-[0_2px_6px_rgba(16,185,129,0.6)] 
+              dark:drop-shadow-[0_0_12px_rgba(16,185,129,0.9)]
               hover:brightness-125 hover:scale-105 transition-all duration-300"
             >
               Divyansh Singh
@@ -61,7 +61,7 @@ function App() {
                 <li key={item}>
                   <button
                     onClick={() => handleNavClick(item)}
-                    className="hover:text-purple-600 dark:hover:text-purple-400 transition"
+                    className="hover:text-emerald-600 dark:hover:text-emerald-400 transition"
                   >
                     {item}
                   </button>
@@ -110,7 +110,7 @@ function App() {
                   <li key={item}>
                     <button
                       onClick={() => handleNavClick(item)}
-                      className="block w-full text-lg hover:text-purple-600 dark:hover:text-purple-400 transition"
+                      className="block w-full text-lg hover:text-emerald-600 dark:hover:text-emerald-400 transition"
                     >
                       {item}
                     </button>

@@ -28,23 +28,23 @@
 
   /* Smooth focus outlines for accessibility */
   :focus-visible {
-    @apply outline-none ring-2 ring-purple-500 ring-offset-2 dark:ring-offset-black;
+    @apply outline-none ring-2 ring-emerald-500 ring-offset-2 dark:ring-offset-black;
   }
 
   /* Links */
   a {
-    @apply text-purple-600 dark:text-purple-400 font-medium 
-           hover:text-purple-700 dark:hover:text-purple-300 
+    @apply text-emerald-600 dark:text-emerald-400 font-medium 
+           hover:text-emerald-700 dark:hover:text-emerald-300 
            underline underline-offset-4 hover:underline-offset-2 
            transition-all duration-200;
   }
 
   /* Selection */
   ::selection {
-    @apply bg-purple-500 text-white;
+    @apply bg-emerald-500 text-white;
   }
   ::-moz-selection {
-    @apply bg-purple-500 text-white;
+    @apply bg-emerald-500 text-white;
   }
 
   /* Headings */
@@ -79,12 +79,12 @@
     @apply inline-flex items-center justify-center gap-2 
            px-6 py-3 rounded-xl font-semibold 
            transition-all duration-300 
-           focus-visible:ring-4 focus-visible:ring-purple-500/50;
+           focus-visible:ring-4 focus-visible:ring-emerald-500/50;
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-purple-600 to-pink-600 
-           text-white hover:from-purple-700 hover:to-pink-700 
+    @apply bg-gradient-to-r from-emerald-600 to-teal-600 
+           text-white hover:from-emerald-700 hover:to-teal-700 
            shadow-lg hover:shadow-xl transform hover:scale-105;
   }
 
@@ -109,13 +109,13 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-purple-500 to-purple-700 
+    @apply bg-gradient-to-b from-emerald-500 to-emerald-700 
            rounded-full border-2 border-transparent 
            bg-clip-padding;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply from-purple-600 to-purple-800;
+    @apply from-emerald-600 to-emerald-800;
   }
 
   /* Dark mode scrollbar */
@@ -124,7 +124,7 @@
   }
 
   .dark ::-webkit-scrollbar-thumb {
-    @apply from-purple-600 to-purple-800;
+    @apply from-emerald-600 to-emerald-800;
   }
 }
 

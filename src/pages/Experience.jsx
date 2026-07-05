@@ -64,21 +64,21 @@ export default function Experience() {
           <div>
             <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-10 inline-block relative">
               Professional Experience
-              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full" />
+              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-emerald-500 to-emerald-500 rounded-full" />
             </h3>
 
             <div className="space-y-10">
               {experiences.map((exp, idx) => (
                 <div 
                   key={idx}
-                  className="relative p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(168,85,247,0.15)] dark:hover:shadow-[0_8px_30px_rgba(168,85,247,0.2)] hover:-translate-y-2 transition-all duration-500"
+                  className="relative p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(16,185,129,0.15)] dark:hover:shadow-[0_8px_30px_rgba(16,185,129,0.2)] hover:-translate-y-2 transition-all duration-500"
                 >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
                     <div>
                       <h4 className="text-xl font-bold text-slate-900 dark:text-white">{exp.title}</h4>
-                      <p className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">{exp.company}</p>
+                      <p className="text-lg font-semibold text-emerald-600 dark:text-emerald-400">{exp.company}</p>
                     </div>
-                    <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200 whitespace-nowrap">
+                    <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 whitespace-nowrap">
                       {exp.date}
                     </span>
                   </div>
@@ -101,21 +101,21 @@ export default function Experience() {
           <div>
             <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-10 inline-block relative">
               Education
-              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
+              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full" />
             </h3>
 
             <div className="space-y-10">
               {education.map((edu, idx) => (
                 <div 
                   key={idx}
-                  className="relative p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(236,72,153,0.15)] dark:hover:shadow-[0_8px_30px_rgba(236,72,153,0.2)] hover:-translate-y-2 transition-all duration-500"
+                  className="relative p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(20,184,166,0.15)] dark:hover:shadow-[0_8px_30px_rgba(20,184,166,0.2)] hover:-translate-y-2 transition-all duration-500"
                 >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
                     <div>
                       <h4 className="text-xl font-bold text-slate-900 dark:text-white">{edu.institution}</h4>
-                      <p className="text-lg font-semibold text-pink-600 dark:text-pink-400">{edu.degree}</p>
+                      <p className="text-lg font-semibold text-emerald-600 dark:text-emerald-400">{edu.degree}</p>
                     </div>
-                    <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-pink-100 dark:bg-pink-900/50 text-pink-800 dark:text-pink-200 whitespace-nowrap">
+                    <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 whitespace-nowrap">
                       {edu.date}
                     </span>
                   </div>
