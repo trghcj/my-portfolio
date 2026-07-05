@@ -1,4 +1,5 @@
 import React from "react";
+import { Briefcase, GraduationCap, BookOpen } from "lucide-react";
 
 export default function Experience() {
   const experiences = [
@@ -67,31 +68,46 @@ export default function Experience() {
               <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-emerald-500 to-emerald-500 rounded-full" />
             </h3>
 
-            <div className="space-y-10">
+            <div className="space-y-6 lg:space-y-8">
               {experiences.map((exp, idx) => (
                 <div 
                   key={idx}
-                  className="relative p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(16,185,129,0.15)] dark:hover:shadow-[0_8px_30px_rgba(16,185,129,0.2)] hover:-translate-y-2 transition-all duration-500"
+                  className="relative p-6 sm:p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-300 group"
                 >
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
-                    <div>
-                      <h4 className="text-xl font-bold text-slate-900 dark:text-white">{exp.title}</h4>
-                      <p className="text-lg font-semibold text-emerald-600 dark:text-emerald-400">{exp.company}</p>
+                  <div className="flex gap-4 sm:gap-6">
+                    {/* Icon Box */}
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 group-hover:bg-emerald-500/20 group-hover:scale-105 transition-all duration-300">
+                        <Briefcase className="w-5 h-5 sm:w-6 sm:h-6" />
+                      </div>
                     </div>
-                    <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 whitespace-nowrap">
-                      {exp.date}
-                    </span>
+                    
+                    {/* Content */}
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-1">
+                        <h4 className="text-xl font-bold text-slate-900 dark:text-white leading-snug pr-4">{exp.title}</h4>
+                        <span className="text-xs sm:text-sm font-medium text-emerald-700/80 dark:text-emerald-400/80 mt-2 sm:mt-1 whitespace-nowrap bg-emerald-500/10 px-3 py-1 rounded-full">
+                          {exp.date}
+                        </span>
+                      </div>
+                      
+                      <p className="text-base sm:text-lg font-semibold text-emerald-600 dark:text-emerald-400 mb-2">
+                        {exp.company}
+                      </p>
+                      
+                      {exp.location && (
+                        <p className="text-sm text-slate-500 dark:text-slate-400 mb-5">
+                          {exp.location}
+                        </p>
+                      )}
+                      
+                      <ul className="list-disc list-outside ml-4 space-y-2.5 text-slate-600 dark:text-gray-300">
+                        {exp.bullets.map((bullet, bIdx) => (
+                          <li key={bIdx} className="leading-relaxed text-sm sm:text-base">{bullet}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <ul className="list-disc list-outside ml-5 space-y-2 text-slate-600 dark:text-gray-300 mb-4">
-                    {exp.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="leading-relaxed">{bullet}</li>
-                    ))}
-                  </ul>
-                  {exp.location && (
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-slate-600 dark:text-gray-300 font-medium mt-auto pt-4 border-t border-slate-200 dark:border-slate-700/50">
-                      <span>{exp.location}</span>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
@@ -104,24 +120,39 @@ export default function Experience() {
               <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full" />
             </h3>
 
-            <div className="space-y-10">
+            <div className="space-y-6 lg:space-y-8">
               {education.map((edu, idx) => (
                 <div 
                   key={idx}
-                  className="relative p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(20,184,166,0.15)] dark:hover:shadow-[0_8px_30px_rgba(20,184,166,0.2)] hover:-translate-y-2 transition-all duration-500"
+                  className="relative p-6 sm:p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-300 group"
                 >
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
-                    <div>
-                      <h4 className="text-xl font-bold text-slate-900 dark:text-white">{edu.institution}</h4>
-                      <p className="text-lg font-semibold text-emerald-600 dark:text-emerald-400">{edu.degree}</p>
+                  <div className="flex gap-4 sm:gap-6">
+                    {/* Icon Box */}
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 group-hover:bg-emerald-500/20 group-hover:scale-105 transition-all duration-300">
+                        {idx === 0 ? <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6" /> : <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />}
+                      </div>
                     </div>
-                    <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 whitespace-nowrap">
-                      {edu.date}
-                    </span>
-                  </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-slate-600 dark:text-gray-300 font-medium mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50">
-                    <span>{edu.location}</span>
-                    <span className="text-slate-900 dark:text-white font-bold">{edu.score}</span>
+                    
+                    {/* Content */}
+                    <div className="flex-1 flex flex-col justify-between">
+                      <div>
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-1">
+                          <h4 className="text-xl font-bold text-slate-900 dark:text-white leading-snug pr-4">{edu.institution}</h4>
+                          <span className="text-xs sm:text-sm font-medium text-emerald-700/80 dark:text-emerald-400/80 mt-2 sm:mt-1 whitespace-nowrap bg-emerald-500/10 px-3 py-1 rounded-full">
+                            {edu.date}
+                          </span>
+                        </div>
+                        <p className="text-base sm:text-lg font-semibold text-emerald-600 dark:text-emerald-400 mb-6 sm:mb-8">
+                          {edu.degree}
+                        </p>
+                      </div>
+                      
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-slate-500 dark:text-slate-400 text-sm sm:text-base pt-4 border-t border-slate-200 dark:border-slate-700/50">
+                        <span>{edu.location}</span>
+                        <span className="text-slate-900 dark:text-white font-bold mt-2 sm:mt-0">{edu.score}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
