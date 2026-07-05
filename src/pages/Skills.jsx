@@ -86,13 +86,11 @@ export default function Skills() {
                       ${categoryHoverClasses[category.size]}
                     `}
                   >
-                    <div className="mb-4 w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-all duration-300">
-                      <img
-                        src={`https://skillicons.dev/icons?i=${skill.icon}`}
-                        alt={skill.name}
-                        className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-sm"
-                      />
-                    </div>
+                    <img
+                      src={`https://skillicons.dev/icons?i=${skill.icon}`}
+                      alt={skill.name}
+                      className="w-16 h-16 md:w-20 md:h-20 mb-4 transition-transform duration-500 group-hover:scale-110 drop-shadow-md"
+                    />
 
                     <p className="text-sm md:text-base font-semibold text-slate-700 dark:text-gray-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors text-center">
                       {skill.name}
