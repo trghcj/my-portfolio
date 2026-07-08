@@ -30,5 +30,13 @@ export const projects = [
     live: "https://clipnest-tau.vercel.app/",
     github: "https://github.com/trghcj/ClipNest",
     image: "/clipnest_portfolio.png.jpeg"
+  },
+  {
+    title: "TaskFlow – Full-Stack SaaS Platform",
+    desc: "A modern, enterprise-grade task management platform featuring interactive Kanban workflows, real-time analytics, and automated Python-based background reminders.",
+    tech: ["React", "FastAPI", "PostgreSQL", "Zustand", "Tailwind CSS"],
+    live: "https://taskflow-ds.vercel.app/",
+    github: "https://github.com/trghcj/TaskFlow",
+    image: "/TaskFlow.jpeg"
   }
 ];
