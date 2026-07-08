@@ -34,7 +34,7 @@ export default function Experience() {
       institution: "Maharaja Agrasen Institute of Technology (MAIT)",
       location: "New Delhi, India",
       date: "08/2023 – 07/2027",
-      score: "CGPA: 8.78/10.0"
+      score: "CGPA: 8.82/10.0"
     },
     {
       degree: "Class XII (CBSE)",
