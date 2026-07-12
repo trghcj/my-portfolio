@@ -38,5 +38,13 @@ export const projects = [
     live: "https://taskflow-ds.vercel.app/",
     github: "https://github.com/trghcj/TaskFlow",
     image: "/TaskFlow.jpeg"
+  },
+  {
+    title: "CollegeDB Engine – Automated University Data Pipeline",
+    desc: "A high-performance full-stack data extraction pipeline designed to automate the enrichment of university datasets. Features asynchronous web scraping, intelligent entity resolution, and real-time data streaming.",
+    tech: ["FastAPI", "Python", "Tailwind CSS v4", "BeautifulSoup4", "Wikidata API"],
+    live: "",
+    github: "",
+    image: "/CollegeDB.png"
   }
 ];
