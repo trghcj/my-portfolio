@@ -9,7 +9,7 @@ export const projects = [
   },
   {
     title: "Zynkup – Campus Event Platform",
-    desc: "Cross-college event discovery, RSVP, reminders & club management. Currently in beta version. Adding more features like image uploading and push notifications.",
+    desc: "ZynkUp is a smart networking and event management platform built using Flutter. It helps users connect, interact, manage events, and build communities.",
     tech: ["Flutter", "FastAPI Backend", "REST API Integration", "JWT Auth", "SQLite"],
     live: "https://zynkup-app.vercel.app/",
     github: "https://github.com/trghcj/zynkup-app",
