@@ -43,7 +43,7 @@ export const projects = [
     title: "CollegeDB Engine – Automated University Data Pipeline",
     desc: "A high-performance full-stack data extraction pipeline designed to automate the enrichment of university datasets. Features asynchronous web scraping, intelligent entity resolution, and real-time data streaming.",
     tech: ["FastAPI", "Python", "Tailwind CSS v4", "BeautifulSoup4", "Wikidata API"],
-    live: "",
+    live: "https://collegedb-no3d.onrender.com/",
     github: "",
     image: "/CollegeDB.png"
   }
