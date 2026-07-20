@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, Sun, Moon } from "lucide-react";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -12,9 +12,18 @@ import { useTheme } from "./context/useTheme";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   const navItems = ["Home", "Projects", "Skills", "Experience", "Suggestions"];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleNavClick = (id) => {
     setNavOpen(false);
@@ -26,44 +35,45 @@ function App() {
 
   return (
     <div className={theme === "dark" ? "dark" : ""}>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300 relative">
+      <div className="min-h-screen bg-white dark:bg-[#0a0a0a] text-zinc-900 dark:text-zinc-100 transition-colors duration-300 relative selection:bg-orange-500 selection:text-white">
         
-        {/* Background gradient dark blue mixture */}
-        <div className="fixed inset-0 pointer-events-none z-0 
-          bg-gradient-to-br from-emerald-100 via-white to-teal-100
-          dark:from-slate-950 dark:via-emerald-950/40 dark:to-slate-900
-          opacity-80 transition-colors duration-500" />
+        {/* Animated Background Mesh/Grid */}
+        <div className="fixed inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-grid-black dark:bg-grid-white bg-grid-pattern opacity-[0.03] dark:opacity-[0.03] animate-grid-scroll" />
+          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-orange-600/10 blur-[120px] mix-blend-screen" />
+          <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-red-600/10 blur-[120px] mix-blend-screen" />
+        </div>
 
         {/* NAVBAR */}
         <nav
-          className="fixed top-0 left-0 right-0 z-50 
-          bg-white/80 dark:bg-slate-900/80 
-          backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
+          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+            scrolled 
+              ? "bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl border-zinc-200 dark:border-zinc-800/50 shadow-sm" 
+              : "bg-transparent border-transparent"
+          }`}
         >
-          <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
             {/* Logo */}
             <button
               onClick={() => handleNavClick('home')}
-              className="relative inline-block group text-2xl md:text-3xl font-extrabold tracking-tight
-              bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-700 
-              bg-clip-text text-transparent
-              drop-shadow-[0_2px_6px_rgba(16,185,129,0.6)] 
-              dark:drop-shadow-[0_0_12px_rgba(16,185,129,0.9)]
-              hover:brightness-125 hover:scale-105 transition-all duration-300"
+              className="font-display text-2xl font-black tracking-tighter uppercase
+              bg-gradient-to-r from-orange-500 to-red-500 
+              bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
             >
-              Divyansh Singh
+              DS.
             </button>
 
             {/* Desktop Nav */}
-            <ul className="hidden md:flex gap-10 font-semibold">
+            <ul className="hidden md:flex gap-8 font-medium text-sm tracking-wide">
               {navItems.map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => handleNavClick(item)}
-                    className="hover:text-emerald-600 dark:hover:text-emerald-400 transition"
+                    className="relative group py-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
                   >
                     {item}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 group-hover:w-full transition-all duration-300" />
                   </button>
                 </li>
               ))}
@@ -74,56 +84,45 @@ function App() {
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle Theme"
-                className="p-3 rounded-full 
-                bg-gray-100 dark:bg-gray-800 
-                hover:scale-110 transition"
+                className="p-2 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
               >
-                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                {theme === "dark" ? <Sun size={18} className="text-orange-400" /> : <Moon size={18} className="text-zinc-600" />}
               </button>
 
               {/* Mobile Toggle */}
               <button
                 onClick={() => setNavOpen(!navOpen)}
-                className="md:hidden"
+                className="md:hidden p-2"
                 aria-label="Toggle Menu"
               >
                 <ChevronDown
-                  size={28}
-                  className={`transition-transform duration-300 ${
-                    navOpen ? "rotate-180" : ""
-                  }`}
+                  size={24}
+                  className={`transition-transform duration-300 ${navOpen ? "rotate-180" : ""}`}
                 />
               </button>
             </div>
           </div>
 
-          {/* MOBILE DROPDOWN MENU */}
-          {navOpen && (
-            <div
-              className="md:hidden absolute top-full left-0 w-full
-              bg-white dark:bg-gray-900
-              border-t border-gray-200 dark:border-gray-800
-              shadow-xl z-50 pointer-events-auto"
-            >
-              <ul className="flex flex-col py-6 space-y-6 text-center font-semibold">
-                {navItems.map((item) => (
-                  <li key={item}>
-                    <button
-                      onClick={() => handleNavClick(item)}
-                      className="block w-full text-lg hover:text-emerald-600 dark:hover:text-emerald-400 transition"
-                    >
-                      {item}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {/* MOBILE MENU */}
+          <div className={`md:hidden absolute w-full bg-white dark:bg-[#0a0a0a] border-b border-zinc-200 dark:border-zinc-800 transition-all duration-300 overflow-hidden ${navOpen ? 'max-h-96' : 'max-h-0 border-transparent'}`}>
+            <ul className="flex flex-col p-4 space-y-2 font-medium">
+              {navItems.map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={() => handleNavClick(item)}
+                    className="block w-full text-left px-4 py-3 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
 
         {/* SECTIONS */}
-        <main className="relative z-10 flex flex-col gap-24 pb-24">
-          <section id="home" className="min-h-screen pt-24">
+        <main className="relative z-10 flex flex-col gap-32 pb-32">
+          <section id="home" className="min-h-screen flex items-center justify-center pt-20">
             <Home onNavigate={handleNavClick} />
           </section>
           
@@ -145,12 +144,8 @@ function App() {
         </main>
 
         {/* FOOTER */}
-        <footer
-          className="py-12 text-center text-sm font-medium text-gray-500 dark:text-gray-400
-          bg-slate-50/80 dark:bg-slate-950/80 
-          backdrop-blur border-t border-gray-200 dark:border-gray-800 relative z-10"
-        >
-          © 2026 Divyansh Singh. All rights reserved.
+        <footer className="py-10 text-center text-sm font-medium text-zinc-500 dark:text-zinc-500 border-t border-zinc-200 dark:border-zinc-900 relative z-10 bg-zinc-50 dark:bg-[#050505]">
+          <p>© {new Date().getFullYear()} Divyansh Singh. Designed for impact.</p>
         </footer>
 
         <Analytics />
@@ -160,4 +155,3 @@ function App() {
 }
 
 export default App;
-

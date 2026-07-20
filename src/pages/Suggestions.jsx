@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Suggestions() {
   const [status, setStatus] = useState("");
@@ -47,100 +43,88 @@ export default function Suggestions() {
   };
 
   return (
-    <div className="relative w-full min-h-screen py-24 md:py-32 flex flex-col justify-center">
-
-      {/* Main Content */}
-      <div className="relative z-20 max-w-5xl mx-auto px-6 w-full">
+    <div className="relative w-full py-32 flex flex-col justify-center">
+      <div className="relative z-20 max-w-4xl mx-auto px-6 w-full">
+        
         {/* Heading */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-slate-900 dark:text-white tracking-tight drop-shadow-sm">
-            Let’s Connect
+          <h2 className="font-display text-5xl md:text-6xl font-black mb-6 text-zinc-900 dark:text-white tracking-tighter">
+            Let’s Connect.
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Have a suggestion, collaboration idea,
-            <br /> or just want to say hi? Feel free to drop a message!
+          <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-light max-w-2xl mx-auto">
+            Have a project idea, feedback, or just want to say hi? <br className="hidden md:block" /> I'm always open to discussing new opportunities.
           </p>
         </div>
 
         {/* Contact Form */}
-        <div className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-8 md:p-12 
-          border border-white/40 dark:border-white/10 mb-16 md:mb-24
-          hover:shadow-[0_8px_30px_rgba(16,185,129,0.15)] dark:hover:shadow-[0_8px_30px_rgba(16,185,129,0.2)] transition-all duration-500">
+        <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-3xl p-8 md:p-12 border border-zinc-200 dark:border-zinc-800 shadow-xl mb-24 transition-colors">
           <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Name */}
-            <div>
-              <label className="block text-lg font-semibold mb-3 text-slate-700 dark:text-gray-200">
-                Your Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                disabled={loading}
-                className="w-full px-6 py-4 rounded-xl text-lg bg-white/50 dark:bg-gray-800/50
-                  border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500
-                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-emerald-400 dark:focus:border-emerald-500
-                  transition-all duration-300 outline-none"
-                placeholder="Enter your name"
-              />
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Name */}
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-zinc-900 dark:text-zinc-300">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  disabled={loading}
+                  className="w-full px-5 py-4 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all outline-none"
+                  placeholder="John Doe"
+                />
+              </div>
 
-            {/* Email */}
-            <div>
-              <label className="block text-lg font-semibold mb-3 text-slate-700 dark:text-gray-200">
-                Your Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                disabled={loading}
-                className="w-full px-6 py-4 rounded-xl text-lg bg-white/50 dark:bg-gray-800/50
-                  border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500
-                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-emerald-400 dark:focus:border-emerald-500
-                  transition-all duration-300 outline-none"
-                placeholder="your.email@example.com"
-              />
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-zinc-900 dark:text-zinc-300">
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  disabled={loading}
+                  className="w-full px-5 py-4 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all outline-none"
+                  placeholder="john@example.com"
+                />
+              </div>
             </div>
 
             {/* Message */}
             <div>
-              <label className="block text-lg font-semibold mb-3 text-slate-700 dark:text-gray-200">
-                Message / Suggestion
+              <label className="block text-sm font-semibold mb-2 text-zinc-900 dark:text-zinc-300">
+                Message
               </label>
               <textarea
                 name="message"
-                rows="7"
+                rows="6"
                 disabled={loading}
-                placeholder="Write your message here..."
-                className="w-full px-6 py-4 rounded-xl text-lg bg-white/50 dark:bg-gray-800/50
-                  border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500
-                  focus:ring-4 focus:ring-indigo-500/20 dark:focus:ring-indigo-500/40 focus:border-emerald-400 dark:focus:border-emerald-500
-                  transition-all duration-300 outline-none resize-none"
+                placeholder="How can I help you?"
+                className="w-full px-5 py-4 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all outline-none resize-none"
               />
             </div>
 
             {/* Submit Button */}
-            <div className="text-center">
+            <div className="text-center pt-4">
               <button
                 type="submit"
                 disabled={loading}
-                className="px-10 md:px-12 py-4 md:py-5 text-lg md:text-xl font-bold text-white rounded-2xl
-                  bg-gradient-to-r from-emerald-600 to-teal-600
-                  hover:from-emerald-500 hover:to-teal-500 hover:scale-105
-                  disabled:opacity-50 disabled:hover:scale-100
-                  transition-all duration-300 shadow-lg shadow-emerald-500/30 dark:shadow-emerald-900/40"
+                className="group relative px-10 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-full overflow-hidden transition-transform hover:scale-105 shadow-xl disabled:opacity-70 disabled:hover:scale-100"
               >
-                {loading ? "Sending..." : " Send Message "}
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                <span className="relative flex items-center justify-center gap-2 w-full h-full">
+                  {loading ? "Sending..." : "Send Message"}
+                </span>
               </button>
             </div>
 
             {/* Status Message */}
             {status && (
               <div
-                className={`text-center text-lg font-medium p-5 rounded-xl mt-6
+                className={`text-center text-sm font-medium p-4 rounded-xl mt-6 border
                   ${
                     status.includes("✅")
-                      ? "bg-green-100/50 dark:bg-green-900/30 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-500/30"
-                      : "bg-red-100/50 dark:bg-red-900/30 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-500/30"
+                      ? "bg-green-50 dark:bg-green-900/10 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/30"
+                      : "bg-red-50 dark:bg-red-900/10 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/30"
                   }`}
               >
                 {status}
@@ -151,46 +135,39 @@ export default function Suggestions() {
 
         {/* Alternative Connect Section */}
         <div className="text-center">
-          <h3 className="text-3xl md:text-4xl font-extrabold mb-8 text-slate-900 dark:text-white">
-            Or Connect With Me
+          <h3 className="font-display text-3xl font-bold mb-8 text-zinc-900 dark:text-white">
+            Other ways to connect
           </h3>
 
-          <div className="flex justify-center gap-8 md:gap-10">
+          <div className="flex justify-center gap-6">
             <a
               href="https://github.com/trghcj"
               target="_blank"
               rel="noreferrer"
-              className="p-5 md:p-6 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl
-                border border-white/40 dark:border-white/10 hover:border-emerald-300 dark:hover:border-emerald-500/50
-                hover:bg-emerald-50 dark:hover:bg-emerald-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
+              className="p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-white hover:bg-orange-500 hover:border-orange-500 hover:-translate-y-1 transition-all duration-300 shadow-sm"
+              aria-label="GitHub"
             >
-              <FaGithub className="text-3xl md:text-4xl text-slate-700 dark:text-white" />
+              <FaGithub size={28} />
             </a>
 
             <a
               href="https://www.linkedin.com/in/divyansh-singh-332b741aa/"
               target="_blank"
               rel="noreferrer"
-              className="p-5 md:p-6 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl
-                border border-white/40 dark:border-white/10 hover:border-sky-300 dark:hover:border-sky-500/50
-                hover:bg-sky-50 dark:hover:bg-sky-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
+              className="p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:-translate-y-1 transition-all duration-300 shadow-sm"
+              aria-label="LinkedIn"
             >
-              <FaLinkedin className="text-3xl md:text-4xl text-sky-600 dark:text-sky-400" />
+              <FaLinkedin size={28} />
             </a>
 
             <a
               href="mailto:ms1778937@gmail.com"
-              className="p-5 md:p-6 rounded-2xl bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl
-                border border-white/40 dark:border-white/10 hover:border-emerald-300 dark:hover:border-emerald-500/50
-                hover:bg-emerald-50 dark:hover:bg-emerald-900/30 hover:scale-110 transition-all duration-300 shadow-sm"
+              className="p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-white hover:bg-red-500 hover:border-red-500 hover:-translate-y-1 transition-all duration-300 shadow-sm"
+              aria-label="Email"
             >
-              <FaEnvelope className="text-3xl md:text-4xl text-emerald-600 dark:text-emerald-400" />
+              <FaEnvelope size={28} />
             </a>
           </div>
-
-          <p className="mt-10 text-lg md:text-xl text-slate-600 dark:text-gray-400 font-medium">
-            Open to ideas, feedback and collaborations 
-          </p>
         </div>
       </div>
     </div>

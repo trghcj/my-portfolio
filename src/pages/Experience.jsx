@@ -1,4 +1,3 @@
-import React from "react";
 import { Briefcase, GraduationCap, BookOpen } from "lucide-react";
 
 export default function Experience() {
@@ -11,8 +10,8 @@ export default function Experience() {
       bullets: [
         "Enhanced app stability across the Syntx ecosystem by architecting a global error boundary and OfflineGuard, integrating Firebase Crashlytics to prevent production crashes.",
         "Updated critical user onboarding flows by implementing strict client-side Regex validation, resolving backend data allocation bugs and ensuring 100% data integrity.",
-        "Revamped legacy UI components by designing high-performance, responsive layouts with glassmorphism, successfully replacing heavy Lottie animations with scalable assets.",
-        "Developed and maintained features for Nexus, the administrative control portal responsible for managing system flow, users, and matches across the competitive platform."
+        "Revamped legacy UI components by designing high-performance, responsive layouts with glassmorphism, replacing heavy Lottie animations with scalable assets.",
+        "Developed features for Nexus, the administrative control portal responsible for managing system flow, users, and matches."
       ]
     },
     {
@@ -21,9 +20,9 @@ export default function Experience() {
       location: "New Delhi, India",
       date: "06/2025 – 08/2025",
       bullets: [
-        "Developed the Airport Authority Linkage App using Flutter and Firebase to digitize Excel-driven workflows and streamline data sharing across airport departments through a centralized platform.",
-        "Designed data integration and processing workflows consolidating operational data from spreadsheets and internal sources, improving accessibility, consistency, and reporting efficiency.",
-        "Implemented Firebase Authentication, Firestore, and role-based access controls while collaborating with stakeholders to build a scalable, data-driven application."
+        "Developed the Airport Authority Linkage App using Flutter and Firebase to digitize Excel-driven workflows and streamline data sharing.",
+        "Designed data integration and processing workflows consolidating operational data from spreadsheets and internal sources.",
+        "Implemented Firebase Authentication, Firestore, and role-based access controls while collaborating with stakeholders to build a scalable application."
       ]
     }
   ];
@@ -31,7 +30,7 @@ export default function Experience() {
   const education = [
     {
       degree: "B.Tech – Computer Science & Engineering (AI)",
-      institution: "Maharaja Agrasen Institute of Technology (MAIT)",
+      institution: "Maharaja Agrasen Institute (MAIT)",
       location: "New Delhi, India",
       date: "08/2023 – 07/2027",
       score: "CGPA: 8.82/10.0"
@@ -45,121 +44,80 @@ export default function Experience() {
     }
   ];
 
+  const allItems = [
+    { type: 'exp', data: experiences[0], icon: Briefcase },
+    { type: 'exp', data: experiences[1], icon: Briefcase },
+    { type: 'edu', data: education[0], icon: GraduationCap },
+    { type: 'edu', data: education[1], icon: BookOpen },
+  ];
+
   return (
-    <div id="experience" className="relative w-full min-h-screen py-24 md:py-32 flex flex-col justify-center">
-      <div className="relative z-20 max-w-7xl mx-auto px-6 w-full">
+    <div id="experience" className="relative w-full py-32 flex flex-col justify-center">
+      <div className="relative z-20 max-w-5xl mx-auto px-6 w-full">
         
-        {/* Header */}
         <div className="text-center mb-24">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 drop-shadow-sm">
-            Experience & Education
+          <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter mb-6">
+            Journey.
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-3xl mx-auto">
-            My professional journey and academic background.
+          <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light max-w-2xl mx-auto">
+            My professional and academic path in building scalable technology.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12">
-          
-          {/* Professional Experience Column */}
-          <div>
-            <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-10 inline-block relative">
-              Professional Experience
-              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" />
-            </h3>
-
-            <div className="space-y-6 lg:space-y-8">
-              {experiences.map((exp, idx) => (
-                <div 
-                  key={idx}
-                  className="relative p-6 sm:p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-300 group"
-                >
-                  <div className="flex gap-4 sm:gap-6">
-                    {/* Icon Box */}
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 group-hover:bg-emerald-500/20 group-hover:scale-105 transition-all duration-300">
-                        <Briefcase className="w-5 h-5 sm:w-6 sm:h-6" />
-                      </div>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-1">
-                        <h4 className="text-xl font-bold text-slate-900 dark:text-white leading-snug pr-4">{exp.title}</h4>
-                        <span className="text-xs sm:text-sm font-medium text-emerald-700/80 dark:text-emerald-400/80 mt-2 sm:mt-1 whitespace-nowrap bg-emerald-500/10 px-3 py-1 rounded-full">
-                          {exp.date}
-                        </span>
-                      </div>
-                      
-                      <p className="text-base sm:text-lg font-semibold text-emerald-600 dark:text-emerald-400 mb-2">
-                        {exp.company}
-                      </p>
-                      
-                      {exp.location && (
-                        <p className="text-sm text-slate-500 dark:text-slate-400 mb-5">
-                          {exp.location}
-                        </p>
-                      )}
-                      
-                      <ul className="list-disc list-outside ml-4 space-y-2.5 text-slate-600 dark:text-gray-300">
-                        {exp.bullets.map((bullet, bIdx) => (
-                          <li key={bIdx} className="leading-relaxed text-sm sm:text-base">{bullet}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+        <div className="relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-zinc-300 dark:before:via-zinc-800 before:to-transparent">
+          {allItems.map((item, index) => {
+            const isEven = index % 2 === 0;
+            const Icon = item.icon;
+            
+            return (
+              <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active mb-16 last:mb-0">
+                {/* Timeline Icon */}
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0a0a] bg-orange-500 text-white shadow-xl shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-125">
+                  <Icon size={16} />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Education Column */}
-          <div>
-            <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-10 inline-block relative">
-              Education
-              <span className="absolute -bottom-3 left-0 w-16 h-1.5 bg-gradient-to-r from-teal-500 to-teal-500 rounded-full" />
-            </h3>
-
-            <div className="space-y-6 lg:space-y-8">
-              {education.map((edu, idx) => (
-                <div 
-                  key={idx}
-                  className="relative p-6 sm:p-8 rounded-3xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-300 group"
-                >
-                  <div className="flex gap-4 sm:gap-6">
-                    {/* Icon Box */}
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 group-hover:bg-emerald-500/20 group-hover:scale-105 transition-all duration-300">
-                        {idx === 0 ? <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6" /> : <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />}
-                      </div>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1 flex flex-col justify-between">
-                      <div>
-                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-1">
-                          <h4 className="text-xl font-bold text-slate-900 dark:text-white leading-snug pr-4">{edu.institution}</h4>
-                          <span className="text-xs sm:text-sm font-medium text-emerald-700/80 dark:text-emerald-400/80 mt-2 sm:mt-1 whitespace-nowrap bg-emerald-500/10 px-3 py-1 rounded-full">
-                            {edu.date}
-                          </span>
-                        </div>
-                        <p className="text-base sm:text-lg font-semibold text-emerald-600 dark:text-emerald-400 mb-6 sm:mb-8">
-                          {edu.degree}
-                        </p>
-                      </div>
-                      
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-slate-500 dark:text-slate-400 text-sm sm:text-base pt-4 border-t border-slate-200 dark:border-slate-700/50">
-                        <span>{edu.location}</span>
-                        <span className="text-slate-900 dark:text-white font-bold mt-2 sm:mt-0">{edu.score}</span>
-                      </div>
-                    </div>
+                
+                {/* Timeline Card */}
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-orange-500/50 transition-colors shadow-sm group-hover:shadow-lg">
+                  
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                    <span className="text-sm font-bold text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30 px-3 py-1 rounded-full w-fit">
+                      {item.data.date}
+                    </span>
+                    {item.data.score && (
+                      <span className="text-sm font-bold text-zinc-500 mt-2 sm:mt-0">
+                        {item.data.score}
+                      </span>
+                    )}
                   </div>
+                  
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-zinc-900 dark:text-white mb-1 group-hover:text-orange-500 transition-colors">
+                    {item.type === 'exp' ? item.data.title : item.data.institution}
+                  </h3>
+                  
+                  <h4 className="text-base font-semibold text-zinc-600 dark:text-zinc-400 mb-4">
+                    {item.type === 'exp' ? item.data.company : item.data.degree}
+                  </h4>
+                  
+                  {item.type === 'exp' && (
+                    <ul className="list-disc list-inside space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+                      {item.data.bullets.map((bullet, bIdx) => (
+                        <li key={bIdx} className="leading-relaxed">{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+                  
+                  {item.data.location && (
+                    <div className="mt-5 pt-4 border-t border-zinc-200 dark:border-zinc-800 text-sm text-zinc-500 flex items-center">
+                      📍 {item.data.location}
+                    </div>
+                  )}
+                  
                 </div>
-              ))}
-            </div>
-          </div>
-
+              </div>
+            );
+          })}
         </div>
+
       </div>
     </div>
   );
