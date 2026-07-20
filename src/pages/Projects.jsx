@@ -42,7 +42,7 @@ export default function Projects() {
                       href={p.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-500 text-white hover:bg-orange-600 shadow-lg transition-transform hover:scale-110"
+                      className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-500 text-zinc-900 hover:bg-orange-600 shadow-lg transition-transform hover:scale-110"
                       aria-label="Live Demo"
                     >
                       <ArrowUpRight size={24} />

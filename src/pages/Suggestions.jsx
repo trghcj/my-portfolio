@@ -70,7 +70,6 @@ export default function Suggestions() {
                   name="name"
                   disabled={loading}
                   className="w-full px-5 py-4 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all outline-none"
-                  placeholder="John Doe"
                 />
               </div>
 
@@ -84,7 +83,6 @@ export default function Suggestions() {
                   name="email"
                   disabled={loading}
                   className="w-full px-5 py-4 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all outline-none"
-                  placeholder="john@example.com"
                 />
               </div>
             </div>

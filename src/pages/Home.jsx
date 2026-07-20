@@ -60,7 +60,7 @@ export default function Home({ onNavigate }) {
           </button>
 
           <a
-            href="https://drive.google.com/file/d/1q30I_PFSIPS3h1tUBeV1uwBVKu-6P9BA/view?usp=sharing"
+            href="https://drive.google.com/file/d/1ls53kq1sjJB8hV7Ie9j9rcmU26ucwtOa/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 rounded-full font-semibold border-2 border-zinc-200 dark:border-zinc-800 bg-white/10 dark:bg-zinc-900/10 backdrop-blur-sm hover:border-orange-500/50 hover:bg-orange-500/5 text-zinc-900 dark:text-white transition-all duration-300 hover:scale-105 flex items-center gap-2"
