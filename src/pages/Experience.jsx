@@ -6,10 +6,11 @@ export default function Experience() {
       date: "05/2026 – PRESENT",
       logo: "/innovitisolutions_logo.jpg",
       bullets: [
-        "Enhanced app stability across the Syntx ecosystem by architecting a global error boundary and OfflineGuard, integrating Firebase Crashlytics to prevent production crashes.",
-        "Updated critical user onboarding flows by implementing strict client-side Regex validation, resolving backend data allocation bugs and ensuring 100% data integrity.",
-        "Revamped legacy UI components by designing high-performance, responsive layouts with glassmorphism, replacing heavy Lottie animations with scalable assets.",
-        "Developed features for Nexus, the administrative control portal responsible for managing system flow, users, and matches."
+        "Engineered the Syntx app ecosystem, building responsive cross-platform pages in Flutter and optimizing backend performance with Go.",
+        "Spearheaded development of Nexus, the centralized admin portal enabling real-time monitoring and control of system-wide activity.",
+        "Debugged and optimized data structures on Azure Database, resolving critical errors in the coding question engine and skill mapping.",
+        "Managed end-to-end testing of the Tournament feature, ensuring seamless competitive flow and data integrity.",
+        "Streamlined internal workflows, boosting workspace productivity and operational speed by 20-30%."
       ]
     },
     {
