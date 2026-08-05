@@ -44,91 +44,97 @@ export default function Suggestions() {
 
   return (
     <div className="relative w-full py-32 flex flex-col justify-center">
-      <div className="relative z-20 max-w-4xl mx-auto px-6 w-full">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 w-full">
         
-        {/* Heading */}
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="font-display text-5xl md:text-6xl font-black mb-6 text-zinc-900 dark:text-white tracking-tighter">
-            Let’s Connect.
-          </h2>
-          <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-light max-w-2xl mx-auto">
-            Have a project idea, feedback, or just want to say hi? <br className="hidden md:block" /> I'm always open to discussing new opportunities.
-          </p>
-        </div>
+        {/* Main Content Split Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white dark:bg-[#0a0a0a] rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-2xl mb-24">
+          
+          {/* Left Side: Image */}
+          <div className="relative w-full h-[400px] lg:h-auto bg-zinc-100 dark:bg-zinc-900 border-b lg:border-b-0 lg:border-r border-zinc-200 dark:border-zinc-800">
+            <img 
+              src="/Suggestion_image.jpg" 
+              alt="Let's Connect" 
+              className="absolute inset-0 w-full h-full object-cover filter contrast-125 dark:brightness-90"
+            />
+          </div>
 
-        {/* Contact Form */}
-        <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-3xl p-8 md:p-12 border border-zinc-200 dark:border-zinc-800 shadow-xl mb-24 transition-colors">
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Right Side: Form */}
+          <div className="p-8 md:p-14 lg:p-16 flex flex-col justify-center">
+            
+            <div className="mb-10">
+              <h2 className="font-display text-4xl md:text-5xl font-black mb-4 text-zinc-900 dark:text-white tracking-tighter">
+                Let’s Connect.
+              </h2>
+              <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light">
+                Whether it's an internship, collaboration, or just saying hello, I'd love to hear from you.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              
               {/* Name */}
               <div>
-                <label className="block text-sm font-semibold mb-2 text-zinc-900 dark:text-zinc-300">
-                  Your Name
-                </label>
                 <input
                   type="text"
                   name="name"
                   disabled={loading}
-                  className="w-full px-5 py-4 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all outline-none"
+                  className="w-full px-0 py-4 bg-transparent border-b border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 transition-colors outline-none text-lg"
+                  placeholder="Your Name"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label className="block text-sm font-semibold mb-2 text-zinc-900 dark:text-zinc-300">
-                  Your Email
-                </label>
                 <input
                   type="email"
                   name="email"
                   disabled={loading}
-                  className="w-full px-5 py-4 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all outline-none"
+                  className="w-full px-0 py-4 bg-transparent border-b border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 transition-colors outline-none text-lg"
+                  placeholder="Email Address"
                 />
               </div>
-            </div>
 
-            {/* Message */}
-            <div>
-              <label className="block text-sm font-semibold mb-2 text-zinc-900 dark:text-zinc-300">
-                Message
-              </label>
-              <textarea
-                name="message"
-                rows="6"
-                disabled={loading}
-                placeholder="How can I help you?"
-                className="w-full px-5 py-4 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all outline-none resize-none"
-              />
-            </div>
-
-            {/* Submit Button */}
-            <div className="text-center pt-4">
-              <button
-                type="submit"
-                disabled={loading}
-                className="group relative px-10 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-full overflow-hidden transition-transform hover:scale-105 shadow-xl disabled:opacity-70 disabled:hover:scale-100"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                <span className="relative flex items-center justify-center gap-2 w-full h-full">
-                  {loading ? "Sending..." : "Send Message"}
-                </span>
-              </button>
-            </div>
-
-            {/* Status Message */}
-            {status && (
-              <div
-                className={`text-center text-sm font-medium p-4 rounded-xl mt-6 border
-                  ${
-                    status.includes("✅")
-                      ? "bg-green-50 dark:bg-green-900/10 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/30"
-                      : "bg-red-50 dark:bg-red-900/10 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/30"
-                  }`}
-              >
-                {status}
+              {/* Message */}
+              <div>
+                <textarea
+                  name="message"
+                  rows="4"
+                  disabled={loading}
+                  placeholder="Tell me about your project..."
+                  className="w-full px-0 py-4 bg-transparent border-b border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 transition-colors outline-none text-lg resize-none"
+                />
               </div>
-            )}
-          </form>
+
+              {/* Submit Button */}
+              <div className="pt-6">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="group relative px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-bold rounded-lg overflow-hidden transition-transform hover:scale-105 shadow-xl disabled:opacity-70 disabled:hover:scale-100 flex items-center gap-2"
+                >
+                  <span className="relative z-10">
+                    {loading ? "Sending..." : "Send Message"}
+                  </span>
+                  {!loading && <span className="relative z-10 transition-transform group-hover:translate-x-1">→</span>}
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                </button>
+              </div>
+
+              {/* Status Message */}
+              {status && (
+                <div
+                  className={`text-sm font-medium p-4 rounded-xl mt-6 border
+                    ${
+                      status.includes("✅")
+                        ? "bg-green-50 dark:bg-green-900/10 text-green-700 dark:text-green-400 border-green-200 dark:border-green-800/30"
+                        : "bg-red-50 dark:bg-red-900/10 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/30"
+                    }`}
+                >
+                  {status}
+                </div>
+              )}
+            </form>
+          </div>
         </div>
 
         {/* Alternative Connect Section */}
