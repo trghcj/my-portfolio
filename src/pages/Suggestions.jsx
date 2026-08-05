@@ -66,7 +66,7 @@ export default function Suggestions() {
                 Let’s Connect.
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light">
-                Whether it's an internship, collaboration, or just saying hello, I'd love to hear from you.
+                Got a project in mind, a question, or just want to connect? Drop me a message and let's build something great.
               </p>
             </div>
 
@@ -101,7 +101,7 @@ export default function Suggestions() {
                   rows="4"
                   disabled={loading}
                   placeholder="Tell me about your project..."
-                  className="w-full px-0 py-4 bg-transparent border-b border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 transition-colors outline-none text-lg resize-none"
+                  className="w-full px-4 py-4 bg-transparent border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-900 dark:text-white placeholder-zinc-400 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors outline-none text-lg resize-none"
                 />
               </div>
 
