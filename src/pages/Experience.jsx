@@ -1,12 +1,10 @@
-import { Briefcase, GraduationCap, BookOpen } from "lucide-react";
-
 export default function Experience() {
   const experiences = [
     {
       title: "Software Engineering Intern",
       company: "Innoviti Solutions",
-      location: "Remote",
-      date: "05/2026 – Present",
+      date: "05/2026 – PRESENT",
+      logo: "/innovitisolutions_logo.jpg",
       bullets: [
         "Enhanced app stability across the Syntx ecosystem by architecting a global error boundary and OfflineGuard, integrating Firebase Crashlytics to prevent production crashes.",
         "Updated critical user onboarding flows by implementing strict client-side Regex validation, resolving backend data allocation bugs and ensuring 100% data integrity.",
@@ -15,10 +13,10 @@ export default function Experience() {
       ]
     },
     {
-      title: "Summer Intern, Business Development Unit",
+      title: "Summer Intern, BD Unit",
       company: "Airports Authority of India (AAI)",
-      location: "New Delhi, India",
       date: "06/2025 – 08/2025",
+      logo: "/Airport_Authority_of_India_Logo.jpg",
       bullets: [
         "Developed the Airport Authority Linkage App using Flutter and Firebase to digitize Excel-driven workflows and streamline data sharing.",
         "Designed data integration and processing workflows consolidating operational data from spreadsheets and internal sources.",
@@ -29,93 +27,119 @@ export default function Experience() {
 
   const education = [
     {
-      degree: "B.Tech – Computer Science & Engineering (AI)",
-      institution: "Maharaja Agrasen Institute (MAIT)",
-      location: "New Delhi, India",
-      date: "08/2023 – 07/2027",
-      score: "CGPA: 8.82/10.0"
+      degree: "Bachelor of Technology",
+      department: "Computer Science & Engineering (AI)",
+      institution: "Maharaja Agrasen Institute of Technology",
+      date: "2023 – 2027",
+      score: "CGPA: 8.82/10.0",
+      logo: "/MAIT-Delhi-Logo.png",
+      description: "Building a strong foundation in computer science, software engineering, algorithms, distributed systems, and artificial intelligence."
     },
     {
       degree: "Class XII (CBSE)",
+      department: "Science Stream",
       institution: "Kendriya Vidyalaya",
-      location: "New Delhi, India",
       date: "2022",
-      score: "85.5%"
+      score: "85.5%",
+      logo: "/Kendriya_vidylaya_images.png",
+      description: "Completed higher secondary education with a focus on physics, chemistry, mathematics, and computer science."
     }
-  ];
-
-  const allItems = [
-    { type: 'exp', data: experiences[0], icon: Briefcase },
-    { type: 'exp', data: experiences[1], icon: Briefcase },
-    { type: 'edu', data: education[0], icon: GraduationCap },
-    { type: 'edu', data: education[1], icon: BookOpen },
   ];
 
   return (
     <div id="experience" className="relative w-full py-32 flex flex-col justify-center">
-      <div className="relative z-20 max-w-5xl mx-auto px-6 w-full">
+      <div className="relative z-20 max-w-6xl mx-auto px-6 w-full">
         
-        <div className="text-center mb-24">
-          <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter mb-6">
-            Journey.
+        {/* Experience Section */}
+        <div className="mb-24">
+          <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter mb-16">
+            Experience.
           </h2>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light max-w-2xl mx-auto">
-            My professional and academic path in building scalable technology.
-          </p>
-        </div>
+          
+          <div className="flex flex-col">
+            {experiences.map((exp, idx) => (
+              <div key={idx} className="grid grid-cols-1 md:grid-cols-[350px_1fr] border-t border-zinc-200 dark:border-zinc-800 py-12">
+                
+                {/* Left side (Logo & Info) */}
+                <div className="flex flex-row gap-6 mb-8 md:mb-0 pr-8">
+                  <div className="w-20 h-20 shrink-0 bg-white dark:bg-[#0f0f11] rounded-2xl border border-zinc-200 dark:border-zinc-800 p-2 shadow-sm flex items-center justify-center overflow-hidden">
+                    <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain rounded-xl" />
+                  </div>
+                  <div className="flex flex-col pt-1">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-2">
+                      {exp.date}
+                    </span>
+                    <h3 className="font-display text-2xl font-bold text-zinc-900 dark:text-white leading-tight tracking-tight mb-2">
+                      {exp.title}
+                    </h3>
+                    <p className="font-serif italic text-lg text-zinc-600 dark:text-zinc-400">
+                      {exp.company}
+                    </p>
+                  </div>
+                </div>
 
-        <div className="relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-zinc-300 dark:before:via-zinc-800 before:to-transparent">
-          {allItems.map((item, index) => {
-            const isEven = index % 2 === 0;
-            const Icon = item.icon;
-            
-            return (
-              <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active mb-16 last:mb-0">
-                {/* Timeline Icon */}
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-[#0a0a0a] bg-orange-500 text-white shadow-xl shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-125">
-                  <Icon size={16} />
+                {/* Right side (Bullets) */}
+                <div className="md:border-l border-zinc-200 dark:border-zinc-800 md:pl-12 flex flex-col justify-center">
+                  <ul className="space-y-4 text-zinc-600 dark:text-zinc-400 leading-relaxed list-disc list-outside ml-4 marker:text-orange-500">
+                    {exp.bullets.map((bullet, bIdx) => (
+                      <li key={bIdx} className="pl-2">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 
-                {/* Timeline Card */}
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-orange-500/50 transition-colors shadow-sm group-hover:shadow-lg">
-                  
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-                    <span className="text-sm font-bold text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30 px-3 py-1 rounded-full w-fit">
-                      {item.data.date}
-                    </span>
-                    {item.data.score && (
-                      <span className="text-sm font-bold text-zinc-500 mt-2 sm:mt-0">
-                        {item.data.score}
-                      </span>
-                    )}
-                  </div>
-                  
-                  <h3 className="font-display text-xl md:text-2xl font-bold text-zinc-900 dark:text-white mb-1 group-hover:text-orange-500 transition-colors">
-                    {item.type === 'exp' ? item.data.title : item.data.institution}
-                  </h3>
-                  
-                  <h4 className="text-base font-semibold text-zinc-600 dark:text-zinc-400 mb-4">
-                    {item.type === 'exp' ? item.data.company : item.data.degree}
-                  </h4>
-                  
-                  {item.type === 'exp' && (
-                    <ul className="list-disc list-inside space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-                      {item.data.bullets.map((bullet, bIdx) => (
-                        <li key={bIdx} className="leading-relaxed">{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
-                  
-                  {item.data.location && (
-                    <div className="mt-5 pt-4 border-t border-zinc-200 dark:border-zinc-800 text-sm text-zinc-500 flex items-center">
-                      📍 {item.data.location}
-                    </div>
-                  )}
-                  
-                </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
+        </div>
+
+        {/* Education Section */}
+        <div>
+          <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter mb-16">
+            Education.
+          </h2>
+          
+          <div className="flex flex-col">
+            {education.map((edu, idx) => (
+              <div key={idx} className="grid grid-cols-1 md:grid-cols-[350px_1fr] border-t border-zinc-200 dark:border-zinc-800 py-12">
+                
+                {/* Left side (Logo) */}
+                <div className="flex justify-start mb-8 md:mb-0 pr-8">
+                  <div className="w-32 h-32 shrink-0 bg-white rounded-3xl border border-zinc-200 dark:border-zinc-800 p-3 shadow-md flex items-center justify-center overflow-hidden">
+                    <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain rounded-2xl" />
+                  </div>
+                </div>
+
+                {/* Right side (Info & Details) */}
+                <div className="md:border-l border-zinc-200 dark:border-zinc-800 md:pl-12 flex flex-col justify-center">
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-3">
+                    {edu.date}
+                  </span>
+                  <h3 className="font-display text-3xl font-black text-zinc-900 dark:text-white leading-tight tracking-tight mb-2">
+                    {edu.degree}
+                  </h3>
+                  <h4 className="text-xl text-zinc-700 dark:text-zinc-300 font-medium mb-3">
+                    {edu.department}
+                  </h4>
+                  <p className="font-serif italic text-lg text-zinc-500 dark:text-zinc-500 mb-6">
+                    {edu.institution}
+                  </p>
+                  
+                  <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed font-light mb-4">
+                    {edu.description}
+                  </p>
+                  
+                  <div>
+                    <span className="inline-block px-4 py-1.5 text-sm font-bold text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30 rounded-full">
+                      {edu.score}
+                    </span>
+                  </div>
+                </div>
+                
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
