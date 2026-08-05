@@ -48,100 +48,99 @@ export default function Experience() {
 
   return (
     <div id="experience" className="relative w-full py-32 flex flex-col justify-center">
-      <div className="relative z-20 max-w-6xl mx-auto px-6 w-full">
+      <div className="relative z-20 max-w-[1400px] mx-auto px-6 w-full">
         
-        {/* Experience Section */}
-        <div className="mb-24">
-          <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter mb-16">
-            Experience.
-          </h2>
+        {/* Two-Column Grid Layout for the entire section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           
-          <div className="flex flex-col">
-            {experiences.map((exp, idx) => (
-              <div key={idx} className="grid grid-cols-1 md:grid-cols-[350px_1fr] border-t border-zinc-200 dark:border-zinc-800 py-12">
-                
-                {/* Left side (Logo & Info) */}
-                <div className="flex flex-row gap-6 mb-8 md:mb-0 pr-8">
-                  <div className="w-20 h-20 shrink-0 bg-white dark:bg-[#0f0f11] rounded-2xl border border-zinc-200 dark:border-zinc-800 p-2 shadow-sm flex items-center justify-center overflow-hidden">
+          {/* Experience Section */}
+          <div>
+            <h2 className="font-display text-5xl font-black text-zinc-900 dark:text-white tracking-tighter mb-12">
+              Experience.
+            </h2>
+            
+            <div className="flex flex-col">
+              {experiences.map((exp, idx) => (
+                <div key={idx} className="flex gap-6 border-t border-zinc-200 dark:border-zinc-800 py-10">
+                  
+                  {/* Left side (Logo) */}
+                  <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 bg-white dark:bg-[#0f0f11] rounded-2xl border border-zinc-200 dark:border-zinc-800 p-2 shadow-sm flex items-center justify-center overflow-hidden">
                     <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain rounded-xl" />
                   </div>
-                  <div className="flex flex-col pt-1">
+                  
+                  {/* Right side (Info & Bullets) */}
+                  <div className="flex flex-col">
                     <span className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-2">
                       {exp.date}
                     </span>
-                    <h3 className="font-display text-2xl font-bold text-zinc-900 dark:text-white leading-tight tracking-tight mb-2">
+                    <h3 className="font-display text-2xl font-bold text-zinc-900 dark:text-white leading-tight tracking-tight mb-1">
                       {exp.title}
                     </h3>
-                    <p className="font-serif italic text-lg text-zinc-600 dark:text-zinc-400">
+                    <p className="font-serif italic text-lg text-zinc-600 dark:text-zinc-400 mb-6">
                       {exp.company}
                     </p>
+                    
+                    <ul className="space-y-3 text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed list-disc list-outside ml-4 marker:text-orange-500">
+                      {exp.bullets.map((bullet, bIdx) => (
+                        <li key={bIdx} className="pl-2">
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+                  
                 </div>
-
-                {/* Right side (Bullets) */}
-                <div className="md:border-l border-zinc-200 dark:border-zinc-800 md:pl-12 flex flex-col justify-center">
-                  <ul className="space-y-4 text-zinc-600 dark:text-zinc-400 leading-relaxed list-disc list-outside ml-4 marker:text-orange-500">
-                    {exp.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="pl-2">
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Education Section */}
-        <div>
-          <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter mb-16">
-            Education.
-          </h2>
-          
-          <div className="flex flex-col">
-            {education.map((edu, idx) => (
-              <div key={idx} className="grid grid-cols-1 md:grid-cols-[350px_1fr] border-t border-zinc-200 dark:border-zinc-800 py-12">
-                
-                {/* Left side (Logo) */}
-                <div className="flex justify-start mb-8 md:mb-0 pr-8">
-                  <div className="w-32 h-32 shrink-0 bg-white rounded-3xl border border-zinc-200 dark:border-zinc-800 p-3 shadow-md flex items-center justify-center overflow-hidden">
-                    <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain rounded-2xl" />
+          {/* Education Section */}
+          <div>
+            <h2 className="font-display text-5xl font-black text-zinc-900 dark:text-white tracking-tighter mb-12">
+              Education.
+            </h2>
+            
+            <div className="flex flex-col">
+              {education.map((edu, idx) => (
+                <div key={idx} className="flex gap-6 border-t border-zinc-200 dark:border-zinc-800 py-10">
+                  
+                  {/* Left side (Logo) */}
+                  <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 bg-white rounded-2xl border border-zinc-200 dark:border-zinc-800 p-2 shadow-sm flex items-center justify-center overflow-hidden">
+                    <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain rounded-xl" />
                   </div>
-                </div>
 
-                {/* Right side (Info & Details) */}
-                <div className="md:border-l border-zinc-200 dark:border-zinc-800 md:pl-12 flex flex-col justify-center">
-                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-3">
-                    {edu.date}
-                  </span>
-                  <h3 className="font-display text-3xl font-black text-zinc-900 dark:text-white leading-tight tracking-tight mb-2">
-                    {edu.degree}
-                  </h3>
-                  <h4 className="text-xl text-zinc-700 dark:text-zinc-300 font-medium mb-3">
-                    {edu.department}
-                  </h4>
-                  <p className="font-serif italic text-lg text-zinc-500 dark:text-zinc-500 mb-6">
-                    {edu.institution}
-                  </p>
-                  
-                  <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed font-light mb-4">
-                    {edu.description}
-                  </p>
-                  
-                  <div>
-                    <span className="inline-block px-4 py-1.5 text-sm font-bold text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30 rounded-full">
-                      {edu.score}
+                  {/* Right side (Info & Details) */}
+                  <div className="flex flex-col">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 mb-2">
+                      {edu.date}
                     </span>
+                    <h3 className="font-display text-2xl font-bold text-zinc-900 dark:text-white leading-tight tracking-tight mb-1">
+                      {edu.degree}
+                    </h3>
+                    <h4 className="text-lg text-zinc-700 dark:text-zinc-300 font-medium mb-1">
+                      {edu.department}
+                    </h4>
+                    <p className="font-serif italic text-lg text-zinc-500 dark:text-zinc-500 mb-6">
+                      {edu.institution}
+                    </p>
+                    
+                    <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light mb-6">
+                      {edu.description}
+                    </p>
+                    
+                    <div>
+                      <span className="inline-block px-4 py-1.5 text-xs font-bold tracking-wide text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-950/30 rounded-full border border-orange-200 dark:border-orange-900/50">
+                        {edu.score}
+                      </span>
+                    </div>
                   </div>
+                  
                 </div>
-                
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
   );
