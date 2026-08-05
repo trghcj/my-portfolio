@@ -1,13 +1,5 @@
 export const projects = [
   {
-    title: "Flight One / Airport Management System",
-    desc: "Production-grade system used by airport staff. Excel upload → auto-processes 10,000+ flights → generates PDF invoices + real-time dashboard.",
-    tech: ["Flutter", "Flask", "Firebase", "Firestore", "Pandas", "Vercel"],
-    live: "https://airport-authority-linkage-app.vercel.app/",
-    github: "https://github.com/trghcj/airport-auhtority-linkage-app-new-1",
-    image: "/Airport.png"
-  },
-  {
     title: "Zynkup – Campus Event Platform",
     desc: "ZynkUp is a smart networking and event management platform built using Flutter. It helps users connect, interact, manage events, and build communities.",
     tech: ["Flutter", "FastAPI Backend", "REST API Integration", "JWT Auth", "SQLite"],
