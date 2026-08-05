@@ -15,7 +15,7 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
-  const navItems = ["Home", "Projects", "Skills", "Experience", "Suggestions"];
+  const navItems = ["Home", "Projects", "Skills", "Experience", "Education", "Suggestions"];
 
   useEffect(() => {
     const handleScroll = () => {

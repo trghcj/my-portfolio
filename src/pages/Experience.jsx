@@ -50,8 +50,8 @@ export default function Experience() {
     <div id="experience" className="relative w-full py-32 flex flex-col justify-center">
       <div className="relative z-20 max-w-[1400px] mx-auto px-6 w-full">
         
-        {/* Two-Column Grid Layout for the entire section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        {/* Vertical Stack Layout for the entire section */}
+        <div className="flex flex-col gap-24">
           
           {/* Experience Section */}
           <div>
@@ -95,7 +95,7 @@ export default function Experience() {
           </div>
 
           {/* Education Section */}
-          <div>
+          <div id="education" className="scroll-mt-24">
             <h2 className="font-display text-5xl font-black text-zinc-900 dark:text-white tracking-tighter mb-12">
               Education.
             </h2>
