@@ -3,7 +3,7 @@ export default function Experience() {
     {
       title: "Software Engineering Intern",
       company: "Innoviti Solutions",
-      date: "05/2026 – PRESENT",
+      date: "05/2026 – 07/2026",
       logo: "/innovitisolutions_logo.jpg",
       bullets: [
         "Engineered the Syntx app ecosystem, building responsive cross-platform pages in Flutter and optimizing backend performance with Go.",
