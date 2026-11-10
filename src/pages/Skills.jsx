@@ -1,3 +1,5 @@
+import Reveal from "../components/Reveal";
+
 const skillCategories = [
   {
     title: "Frontend & Mobile",
@@ -56,16 +58,17 @@ export default function Skills() {
       <div className="relative z-20 max-w-7xl mx-auto px-6 w-full">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter">
             Technical Arsenal.
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light max-w-md md:text-right">
             The frameworks, languages, and tools I use to architect robust systems and build premium interfaces.
           </p>
-        </div>
+        </Reveal>
 
         {/* Infinite logo strip */}
+        <Reveal delay={100}>
         <div className="skills-marquee relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/30 backdrop-blur-sm py-5 mb-8">
           <div className="skills-marquee-track flex w-max gap-10">
             {[...allSkills, ...allSkills].map((s, i) => (
@@ -76,12 +79,14 @@ export default function Skills() {
             ))}
           </div>
         </div>
+        </Reveal>
 
         {/* Category cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, idx) => (
-            <div
+            <Reveal
               key={category.title}
+              delay={150 + idx * 120}
               className="group/card relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-[#0c0c0e]/80 backdrop-blur-sm p-6 md:p-8 shadow-sm hover:shadow-2xl hover:shadow-orange-500/10 hover:border-orange-500/40 transition-all duration-500"
             >
               {/* Glow */}
@@ -120,7 +125,7 @@ export default function Skills() {
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

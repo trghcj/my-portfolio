@@ -1,3 +1,4 @@
+import Reveal from "../components/Reveal";
 import { Briefcase, GraduationCap, Calendar, Award } from "lucide-react";
 
 const experiences = [
@@ -66,7 +67,7 @@ const education = [
 
 function SectionHeader({ icon, eyebrow, title, subtitle }) {
   return (
-    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+    <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
       <div>
         <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 dark:text-orange-500 mb-3">
           {icon} {eyebrow}
@@ -76,7 +77,7 @@ function SectionHeader({ icon, eyebrow, title, subtitle }) {
         </h2>
       </div>
       <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light max-w-md md:text-right">{subtitle}</p>
-    </div>
+    </Reveal>
   );
 }
 
@@ -120,7 +121,7 @@ export default function Experience() {
                   <Logo src={exp.logo} alt={exp.company} cover={exp.logoCover} />
                 </div>
 
-                <article className={`flex-1 min-w-0 p-6 md:p-8 ${cardClass}`}>
+                <Reveal as="article" className={`flex-1 min-w-0 p-6 md:p-8 ${cardClass}`}>
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
                     <div className="min-w-0">
@@ -166,7 +167,7 @@ export default function Experience() {
                       </span>
                     ))}
                   </div>
-                </article>
+                </Reveal>
               </li>
             ))}
           </ol>
@@ -182,8 +183,8 @@ export default function Experience() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {education.map((edu) => (
-              <article key={edu.institution} className={`flex flex-col p-6 md:p-8 ${cardClass}`}>
+            {education.map((edu, i) => (
+              <Reveal as="article" key={edu.institution} delay={i * 120} className={`flex flex-col p-6 md:p-8 ${cardClass}`}>
                 <div className="flex items-start gap-4 mb-5">
                   <Logo src={edu.logo} alt={edu.institution} />
                   <div className="min-w-0">
@@ -207,7 +208,7 @@ export default function Experience() {
                     <Award size={12} /> {edu.score}
                   </span>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
