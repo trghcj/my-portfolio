@@ -21,7 +21,8 @@ export const projects = [
     tech: ["Flutter", "FastAPI Backend", "REST API Integration", "JWT Auth", "SQLite"],
     live: "https://zynkup-app.vercel.app/",
     github: "https://github.com/trghcj/zynkup-app",
-    image: "/Zynkup_portfolio.png.jpeg"
+    image: "/Zynkup_portfolio.jpg",
+    imageFit: "contain"
   },
   {
     title: "Talvix – Streamline Hiring",
