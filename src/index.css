@@ -65,3 +65,24 @@
     @apply bg-orange-500/50 rounded-full hover:bg-orange-500 transition-colors;
   }
 }
+/* ---------- Projects: emerge-from-darkness scroll reveal ---------- */
+.project-emerge {
+  --p: 1; /* 0 = hidden in darkness, 1 = fully revealed (set by JS on scroll) */
+  perspective: 1200px;
+}
+.project-emerge-card {
+  transform:
+    translateY(calc((1 - var(--p)) * 90px))
+    scale(calc(0.86 + var(--p) * 0.14))
+    rotateX(calc((1 - var(--p)) * 8deg));
+  filter: blur(calc((1 - var(--p)) * 10px));
+  opacity: calc(0.25 + var(--p) * 0.75);
+  transform-origin: center top;
+  will-change: transform, filter, opacity;
+}
+.project-emerge-veil {
+  opacity: calc((1 - var(--p)) * 0.92);
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-emerge { --p: 1 !important; }
+}

@@ -1,6 +1,18 @@
 export default function Experience() {
   const experiences = [
     {
+      title: "Technical Intern",
+      company: "Pragmys",
+      date: "08/2026 – Present",
+      logo: "/pragmys_logo.png",
+      logoCover: true,
+      bullets: [
+        "Engineered the Pragmys Chrome Extension to automate job data extraction across 6 major platforms (LinkedIn, Indeed, etc.), significantly increasing system automation and eliminating manual job evaluation.",
+        "Architected a secure, “no-secrets” OAuth flow and expanded the Go backend API, enabling real-time generation of personalized Skills Matrices directly in the user’s browser.",
+        "Developed a heuristics-based Universal Scraper utilizing text-density analysis, automating the parsing of job descriptions from virtually any custom company career page."
+      ]
+    },
+    {
       title: "Software Engineering Intern",
       company: "Innoviti Solutions",
       date: "05/2026 – 07/2026",
@@ -65,8 +77,8 @@ export default function Experience() {
                 <div key={idx} className="flex gap-6 border-t border-zinc-200 dark:border-zinc-800 py-10">
                   
                   {/* Left side (Logo) */}
-                  <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 bg-white dark:bg-[#0f0f11] rounded-2xl border border-zinc-200 dark:border-zinc-800 p-2 shadow-sm flex items-center justify-center overflow-hidden">
-                    <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain rounded-xl" />
+                  <div className={`w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm flex items-center justify-center overflow-hidden ${exp.logoCover ? "bg-black p-0" : "bg-white dark:bg-[#0f0f11] p-2"}`}>
+                    <img src={exp.logo} alt={exp.company} className={`w-full h-full ${exp.logoCover ? "object-cover" : "object-contain rounded-xl"}`} />
                   </div>
                   
                   {/* Right side (Info & Bullets) */}

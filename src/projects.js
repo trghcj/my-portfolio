@@ -1,5 +1,21 @@
 export const projects = [
   {
+    title: "Smart Drive Assistant – AI Agent for Google Drive",
+    desc: "An autonomous AI agent for Google Drive that turns plain-English commands into real actions: organizing files, renaming, detecting duplicates via MD5 checksums, and scheduling clean-up sweeps. Every plan is previewed as a dry-run card with one-click undo, and pasted images are OCR'd and filed straight into Drive.",
+    tech: ["React 19", "FastAPI", "Gemini Flash", "Google Drive API", "APScheduler", "Tailwind CSS"],
+    live: "https://smart-drive-assistant-lovat.vercel.app",
+    github: "https://github.com/trghcj/smart-drive-assistant",
+    image: "/SmartDrive.png"
+  },
+  {
+    title: "YouTube Playlist Analyzer – Chrome Extension",
+    desc: "A Manifest V3 Chrome extension that calculates how long any playlist or video takes to watch at every playback speed. It tracks remaining time live as you watch, builds daily viewing schedules, and lets you search and sort videos, all inside an in-page panel that follows YouTube's navigation without reloads.",
+    tech: ["JavaScript", "Chrome Extension (MV3)", "DOM APIs", "HTML/CSS"],
+    github: "https://github.com/trghcj/youtube-playlist-extension",
+    image: "/PlaylistAnalyzer.png",
+    imageFit: "contain"
+  },
+  {
     title: "Zynkup – Campus Event Platform",
     desc: "ZynkUp is a smart networking and event management platform built using Flutter. It helps users connect, interact, manage events, and build communities.",
     tech: ["Flutter", "FastAPI Backend", "REST API Integration", "JWT Auth", "SQLite"],
