@@ -86,3 +86,22 @@
 @media (prefers-reduced-motion: reduce) {
   .project-emerge { --p: 1 !important; }
 }
+
+/* ---------- Skills: infinite logo marquee ---------- */
+.skills-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.skills-marquee-track {
+  padding-right: 2.5rem; /* equals the gap, so the -50% loop is seamless */
+  animation: skills-marquee 40s linear infinite;
+}
+.skills-marquee:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes skills-marquee {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills-marquee-track { animation: none; }
+}
