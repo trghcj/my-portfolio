@@ -69,15 +69,15 @@ export default function Projects() {
         </div>
 
         {/* Projects List */}
-        <div className="flex flex-col gap-16 md:gap-24">
+        <div className="flex flex-col gap-12 md:gap-16">
           {projects.map((p, i) => (
             <div
               key={i}
               ref={(el) => (cardRefs.current[i] = el)}
-              className="project-emerge group relative"
+              className={`project-emerge group relative w-full lg:w-[72%] ${i % 2 === 1 ? "lg:self-end" : "lg:self-start"}`}
             >
-              <div className="project-emerge-card relative overflow-hidden rounded-[2.5rem] border border-zinc-200 dark:border-zinc-800/70 bg-white/80 dark:bg-[#0c0c0e]/80 backdrop-blur-sm shadow-2xl p-6 md:p-10 lg:p-12">
-                <div className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-16 ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
+              <div className="project-emerge-card relative overflow-hidden rounded-[2rem] border border-zinc-200 dark:border-zinc-800/70 bg-white/80 dark:bg-[#0c0c0e]/80 backdrop-blur-sm shadow-2xl p-5 md:p-8">
+                <div className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-10 ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
 
                   {/* Text Content */}
                   <div className="w-full lg:w-1/2 flex flex-col justify-center">
@@ -85,22 +85,22 @@ export default function Projects() {
                       {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
                     </span>
 
-                    <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-zinc-900 dark:text-white tracking-tight">
+                    <h3 className="font-display text-2xl md:text-3xl font-black mb-3 text-zinc-900 dark:text-white tracking-tight">
                       {p.title}
                     </h3>
 
-                    <div className="mb-8 pl-6 border-l-2 border-orange-500/50">
-                      <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
+                    <div className="mb-6 pl-5 border-l-2 border-orange-500/50">
+                      <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
                         {p.desc}
                       </p>
                     </div>
 
                     {/* Tech Tags */}
-                    <div className="flex flex-wrap gap-3 mb-10">
+                    <div className="flex flex-wrap gap-2 mb-8">
                       {p.tech.map((t, j) => (
                         <span
                           key={j}
-                          className="px-4 py-1.5 text-sm font-semibold tracking-wide rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 text-zinc-700 dark:text-zinc-300"
+                          className="px-3 py-1 text-xs font-semibold tracking-wide rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 text-zinc-700 dark:text-zinc-300"
                         >
                           {t}
                         </span>
