@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Sun, Moon, ArrowUp } from "lucide-react";
+import { Menu, X, ArrowUp } from "lucide-react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -9,6 +9,7 @@ import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Suggestions from "./pages/Suggestions";
 import CursorGlow from "./components/CursorGlow";
+import ThemeToggle from "./components/ThemeToggle";
 
 import { useTheme } from "./context/useTheme";
 
@@ -139,13 +140,7 @@ function App() {
 
             {/* Actions */}
             <div className="flex items-center gap-2">
-              <button
-                onClick={toggleTheme}
-                aria-label="Toggle theme"
-                className="p-2 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:rotate-12 transition-all"
-              >
-                {theme === "dark" ? <Sun size={17} className="text-orange-400" /> : <Moon size={17} className="text-zinc-600" />}
-              </button>
+              <ThemeToggle theme={theme} onToggle={toggleTheme} />
               <button
                 onClick={() => setNavOpen(!navOpen)}
                 className="md:hidden p-2 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60"
