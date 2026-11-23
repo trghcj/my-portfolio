@@ -100,10 +100,10 @@ export default function Suggestions() {
 
         {/* Header */}
         <Reveal className="text-center mb-14 md:mb-16">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 dark:text-orange-500 mb-4">
-            <span className="w-8 h-px bg-orange-500/60" /> Contact <span className="w-8 h-px bg-orange-500/60" />
+          <span className="inline-flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-[0.25em] text-orange-600 dark:text-orange-500 mb-4">
+            <span className="w-8 h-px bg-orange-500/60" /> Chapter 05 · Contact <span className="w-8 h-px bg-orange-500/60" />
           </span>
-          <h2 className="font-display text-5xl md:text-7xl font-black text-zinc-900 dark:text-white tracking-tighter leading-[1.05]">
+          <h2 className="font-display text-5xl md:text-7xl font-light text-zinc-900 dark:text-white tracking-tight leading-[1.05]">
             Let&apos;s build something{" "}
             <span className="bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent">
               great.
@@ -117,7 +117,7 @@ export default function Suggestions() {
         {/* Card with animated gradient border */}
         <Reveal delay={100}>
           <div className="glow-border rounded-[2rem] p-px shadow-2xl shadow-orange-500/10">
-            <div className="grid grid-cols-1 lg:grid-cols-5 rounded-[calc(2rem-1px)] overflow-hidden bg-white dark:bg-[#0b0b0d]">
+            <div className="grid grid-cols-1 lg:grid-cols-5 rounded-[calc(2rem-1px)] overflow-hidden bg-white dark:bg-[#0d130e]">
 
               {/* Left: image + channels */}
               <div className="relative lg:col-span-2 min-h-[460px] lg:min-h-[640px] overflow-hidden group/img">
@@ -129,7 +129,7 @@ export default function Suggestions() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
 
                 <div className="relative h-full flex flex-col justify-end p-6 md:p-8 gap-3">
-                  <p className="text-white/70 text-xs font-bold uppercase tracking-[0.25em] mb-1">Reach me directly</p>
+                  <p className="text-white/70 text-xs font-mono font-medium uppercase tracking-[0.25em] mb-1">Reach me directly</p>
                   {channels.map((c) => (
                     <a
                       key={c.label}
@@ -154,7 +154,7 @@ export default function Suggestions() {
               {/* Right: form */}
               <div onMouseMove={onSpotlight} className="spotlight relative lg:col-span-3 p-6 sm:p-10 lg:p-14 flex flex-col justify-center">
                 <div className="relative">
-                  <h3 className="font-display text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight mb-2">
+                  <h3 className="font-display text-2xl md:text-3xl font-normal text-zinc-900 dark:text-white tracking-tight mb-2">
                     Send a message
                   </h3>
                   <p className="text-zinc-500 dark:text-zinc-400 mb-8">Fill in the form and it lands straight in my inbox.</p>
@@ -204,7 +204,7 @@ export default function Suggestions() {
                           className={`flex items-center gap-2 text-sm font-medium px-4 py-3 rounded-2xl border animate-pop ${
                             status.type === "success"
                               ? "bg-emerald-50 dark:bg-emerald-900/15 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/40"
-                              : "bg-red-50 dark:bg-red-900/15 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/40"
+                              : "bg-rose-50 dark:bg-rose-900/15 text-rose-700 dark:text-rose-400 border-rose-200 dark:border-rose-800/40"
                           }`}
                         >
                           {status.type === "success" ? <CheckCircle2 size={18} /> : <AlertCircle size={18} />}

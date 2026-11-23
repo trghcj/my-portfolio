@@ -1,66 +1,96 @@
+import { lazy, Suspense } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { Code2, Rocket, Mail, Github, Linkedin } from "lucide-react";
-import { projects } from "../projects";
+import { ArrowRight, FileText, Mail, Github, Linkedin, Leaf, ArrowUpRight, GraduationCap } from "lucide-react";
+import { useTheme } from "../context/useTheme";
 
-const stats = [
-  { value: "3", label: "Internships" },
-  { value: `${projects.length}+`, label: "Projects shipped" },
-  { value: "8.82", label: "CGPA" },
-];
+// three.js is heavy — load the scene after the text so the hero paints instantly
+const ForestScene = lazy(() => import("../components/ForestScene"));
+
+function GlassCard({ eyebrow, title, image, imageFit = "cover", icon, onClick, delay }) {
+  return (
+    <div className="hero-in" style={{ "--d": delay }}>
+    <button
+      type="button"
+      onClick={onClick}
+      className="glass-card group w-full text-left rounded-3xl p-2.5 transition-all duration-500 hover:-translate-y-1"
+    >
+      {image && (
+        <div className="h-28 rounded-2xl overflow-hidden mb-3 bg-black/20">
+          <img
+            src={image}
+            alt=""
+            className={`w-full h-full ${imageFit === "contain" ? "object-contain p-2" : "object-cover object-top"} transition-transform duration-700 group-hover:scale-105`}
+          />
+        </div>
+      )}
+      <div className="flex items-end justify-between gap-3 px-2 pb-1.5">
+        <div className="min-w-0">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600 dark:text-white/55 mb-1">{eyebrow}</p>
+          <p className="font-display text-lg font-normal leading-tight text-zinc-900 dark:text-white">{title}</p>
+        </div>
+        <span className="grid place-items-center w-9 h-9 shrink-0 rounded-full bg-zinc-900/10 dark:bg-white/15 text-zinc-800 dark:text-white group-hover:bg-orange-500 group-hover:text-white transition-colors">
+          {icon}
+        </span>
+      </div>
+    </button>
+    </div>
+  );
+}
 
 export default function Home({ onNavigate }) {
+  const { theme } = useTheme();
+  const go = (id) => onNavigate && onNavigate(id);
+
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-6 flex flex-col items-center justify-center">
-      <div className="text-center w-full z-10 flex flex-col items-center">
+    <>
+      {/* 3D woodland */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <Suspense fallback={null}>
+          <ForestScene theme={theme} />
+        </Suspense>
+        {/* readability + blend into the page */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f3f5ee]/85 via-[#f3f5ee]/30 to-transparent dark:from-[#090d0a]/80 dark:via-[#090d0a]/25" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-[#f3f5ee] dark:to-[#090d0a]" />
+      </div>
 
-        {/* Avatar with spinning gradient ring */}
-        <div className="hero-in mb-10" style={{ "--d": "0ms" }}>
-        <div className="relative animate-float">
-          <div className="absolute inset-0 rounded-full blur-3xl bg-orange-500/30 scale-150 animate-pulse-slow" />
-          <div className="avatar-ring relative w-32 h-32 md:w-40 md:h-40 rounded-full p-[3px]">
-            <div className="w-full h-full rounded-full bg-white dark:bg-zinc-950 p-1">
-              <img
-                src="https://github.com/trghcj.png"
-                alt="Divyansh Singh"
-                className="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-12 items-center">
+
+        {/* Left: copy */}
+        <div className="max-w-3xl min-w-0">
+          <div
+            className="hero-in mb-8 inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-card text-xs font-mono uppercase tracking-[0.2em] text-zinc-700 dark:text-white/80"
+            style={{ "--d": "100ms" }}
+          >
+            <span className="relative flex w-2 h-2">
+              <span className="absolute inline-flex w-full h-full rounded-full bg-orange-400 opacity-75 animate-ping" />
+              <span className="relative inline-flex w-2 h-2 rounded-full bg-orange-400" />
+            </span>
+            Hi, I&apos;m Divyansh Singh
           </div>
-        </div>
-        </div>
 
-        {/* Status chip */}
-        <div
-          className="hero-in mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 backdrop-blur text-sm font-medium text-zinc-700 dark:text-zinc-300 shadow-sm"
-          style={{ "--d": "120ms" }}
-        >
-          <span className="relative flex w-2 h-2">
-            <span className="absolute inline-flex w-full h-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
-            <span className="relative inline-flex w-2 h-2 rounded-full bg-emerald-500" />
-          </span>
-          Hi, I&apos;m Divyansh Singh
-        </div>
-
-        {/* Headline */}
-        <div className="space-y-6 max-w-4xl">
           <h1
-            className="hero-in font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-zinc-900 dark:text-white leading-[1.05]"
+            className="hero-in font-display font-extralight text-[2.75rem] leading-[1] sm:text-7xl md:text-8xl lg:text-[7.5rem] tracking-tight text-zinc-900 dark:text-white"
             style={{ "--d": "220ms" }}
           >
-            Engineering digital <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent">
+            Engineering
+            <br />
+            digital{" "}
+            <span className="italic font-light bg-gradient-to-r from-orange-500 via-lime-300 to-red-400 dark:from-orange-300 dark:via-lime-200 dark:to-red-300 bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent pr-2">
               experiences
             </span>
           </h1>
 
-          <p className="hero-in text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 font-light max-w-2xl mx-auto" style={{ "--d": "340ms" }}>
+          <p
+            className="hero-in mt-8 text-lg md:text-xl text-zinc-700 dark:text-white/70 font-light max-w-xl"
+            style={{ "--d": "340ms" }}
+          >
             I am a full-stack developer focused on building{" "}
-            <span className="font-medium text-zinc-900 dark:text-white">scalable architectures</span> and{" "}
-            <span className="font-medium text-zinc-900 dark:text-white">premium interfaces</span>.
+            <span className="text-zinc-900 dark:text-white font-normal">scalable architectures</span> and{" "}
+            <span className="text-zinc-900 dark:text-white font-normal">premium interfaces</span>.
           </p>
 
-          <div className="hero-in h-10 text-lg md:text-xl font-mono font-medium text-orange-600 dark:text-orange-500" style={{ "--d": "440ms" }}>
-            <span className="text-zinc-400 dark:text-zinc-600">&gt; </span>
+          <div className="hero-in mt-4 h-8 font-mono text-sm md:text-base text-orange-700 dark:text-orange-300" style={{ "--d": "440ms" }}>
+            <span className="text-zinc-500 dark:text-white/40">&gt; </span>
             <TypeAnimation
               sequence={[
                 "Building React Applications", 2000,
@@ -72,66 +102,91 @@ export default function Home({ onNavigate }) {
               repeat={Infinity}
             />
           </div>
-        </div>
 
-        {/* CTAs */}
-        <div className="hero-in mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center" style={{ "--d": "540ms" }}>
-          <button
-            onClick={() => onNavigate && onNavigate("projects")}
-            className="group relative px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-semibold rounded-full overflow-hidden transition-transform hover:scale-105 shadow-xl shadow-orange-500/20"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-            <span className="relative flex items-center gap-2 group-hover:text-white">
-              <Rocket size={18} /> View My Work
-            </span>
-          </button>
+          {/* CTAs — small pills like a field guide */}
+          <div className="hero-in mt-10 flex flex-wrap items-center gap-3" style={{ "--d": "540ms" }}>
+            <button
+              onClick={() => go("projects")}
+              className="group inline-flex items-center gap-3 pl-1.5 pr-5 py-1.5 rounded-full glass-card text-sm font-medium text-zinc-900 dark:text-white hover:bg-white/70 dark:hover:bg-white/15 transition-colors"
+            >
+              <span className="grid place-items-center w-8 h-8 rounded-full bg-orange-500 text-white">
+                <Leaf size={15} />
+              </span>
+              Explore the work
+              <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+            </button>
 
-          <a
-            href="https://drive.google.com/file/d/1ls53kq1sjJB8hV7Ie9j9rcmU26ucwtOa/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline px-8 py-4 rounded-full font-semibold border-2 border-zinc-200 dark:border-zinc-800 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-sm hover:border-orange-500/60 hover:bg-orange-500/5 text-zinc-900 dark:text-white hover:text-zinc-900 dark:hover:text-white transition-all duration-300 hover:scale-105 flex items-center gap-2"
-          >
-            <Code2 size={18} /> Read Resume
-          </a>
-        </div>
+            <a
+              href="https://drive.google.com/file/d/1ls53kq1sjJB8hV7Ie9j9rcmU26ucwtOa/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-underline inline-flex items-center gap-2 px-5 py-3 rounded-full glass-card text-sm font-medium text-zinc-900 dark:text-white hover:text-zinc-900 dark:hover:text-white hover:bg-white/70 dark:hover:bg-white/15 transition-colors"
+            >
+              <FileText size={15} /> Read Resume
+            </a>
 
-        {/* Stats */}
-        <div className="hero-in mt-14 grid grid-cols-3 divide-x divide-zinc-200 dark:divide-zinc-800 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/40 backdrop-blur-sm" style={{ "--d": "640ms" }}>
-          {stats.map((s) => (
-            <div key={s.label} className="px-5 sm:px-8 py-4">
-              <p className="font-display text-2xl md:text-3xl font-black text-zinc-900 dark:text-white">{s.value}</p>
-              <p className="text-[11px] sm:text-xs uppercase tracking-widest text-zinc-500">{s.label}</p>
+            <div className="flex items-center gap-1 ml-1">
+              {[
+                { href: "https://github.com/trghcj", label: "GitHub", icon: <Github size={17} /> },
+                { href: "https://linkedin.com/in/divyansh-singh-332b741aa", label: "LinkedIn", icon: <Linkedin size={17} /> },
+                { href: "mailto:ms1778937@gmail.com", label: "Email", icon: <Mail size={17} /> },
+              ].map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noreferrer"
+                  aria-label={s.label}
+                  className="no-underline grid place-items-center w-10 h-10 rounded-full text-zinc-700 dark:text-white/70 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-900/5 dark:hover:bg-white/10 transition-colors"
+                >
+                  {s.icon}
+                </a>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
-        {/* Socials */}
-        <div className="hero-in mt-10 flex items-center justify-center gap-6" style={{ "--d": "740ms" }}>
-          <a href="https://github.com/trghcj" target="_blank" rel="noreferrer" aria-label="GitHub" className="no-underline text-zinc-500 hover:text-orange-500 hover:-translate-y-0.5 transition-all">
-            <Github size={22} />
-          </a>
-          <a href="https://linkedin.com/in/divyansh-singh-332b741aa" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="no-underline text-zinc-500 hover:text-orange-500 hover:-translate-y-0.5 transition-all">
-            <Linkedin size={22} />
-          </a>
-          <a href="mailto:ms1778937@gmail.com" aria-label="Email" className="no-underline text-zinc-500 hover:text-orange-500 hover:-translate-y-0.5 transition-all">
-            <Mail size={22} />
-          </a>
+        {/* Right: floating glass field notes */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:self-center">
+          <GlassCard
+            eyebrow="Currently"
+            title="Technical Intern at Pragmys"
+            icon={<ArrowUpRight size={16} />}
+            onClick={() => go("experience")}
+            delay="600ms"
+          />
+          <GlassCard
+            eyebrow="Latest build"
+            title="Smart Drive Assistant"
+            image="/SmartDrive.png"
+            icon={<ArrowUpRight size={16} />}
+            onClick={() => go("projects")}
+            delay="720ms"
+          />
+          <GlassCard
+            eyebrow="Field note · MAIT"
+            title="B.Tech CSE (AI) · CGPA 8.82"
+            icon={<GraduationCap size={16} />}
+            onClick={() => go("education")}
+            delay="840ms"
+          />
         </div>
-
-        {/* Scroll cue */}
-        <button
-          onClick={() => onNavigate && onNavigate("projects")}
-          aria-label="Scroll to projects"
-          className="hero-in mt-14 hidden md:flex flex-col items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-zinc-400"
-          style={{ "--d": "900ms" }}
-        >
-          <span className="w-6 h-10 rounded-full border-2 border-zinc-300 dark:border-zinc-700 flex justify-center pt-2">
-            <span className="w-1 h-2 rounded-full bg-orange-500 animate-scroll-dot" />
-          </span>
-          Scroll
-        </button>
       </div>
-    </div>
+
+      {/* Scroll cue */}
+      <div className="absolute bottom-8 inset-x-0 z-10 hidden md:flex justify-center">
+      <button
+        onClick={() => go("projects")}
+        aria-label="Scroll to projects"
+        className="hero-in flex flex-col items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-500 dark:text-white/50"
+        style={{ "--d": "1000ms" }}
+      >
+        <span className="w-6 h-10 rounded-full border border-zinc-400/60 dark:border-white/30 flex justify-center pt-2">
+          <span className="w-1 h-2 rounded-full bg-orange-500 animate-scroll-dot" />
+        </span>
+        Enter the forest
+      </button>
+      </div>
+    </>
   );
 }

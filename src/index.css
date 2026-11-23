@@ -15,8 +15,8 @@
 
   body {
     @apply min-h-screen w-full m-0 p-0 font-sans antialiased
-           bg-white text-zinc-900
-           dark:bg-[#0a0a0a] dark:text-zinc-100;
+           bg-[#f3f5ee] text-zinc-900
+           dark:bg-[#090d0a] dark:text-zinc-100;
     line-height: 1.6;
   }
 
@@ -24,7 +24,7 @@
     @apply outline-none ring-2 ring-orange-500 ring-offset-2 dark:ring-offset-black;
   }
 
-  a {
+  :where(a) {
     @apply text-orange-600 dark:text-orange-500 font-medium 
            hover:text-orange-700 dark:hover:text-orange-400 
            underline underline-offset-4 hover:underline-offset-2 
@@ -42,7 +42,7 @@
     @apply font-display font-bold tracking-tight;
   }
 
-  h1 { @apply text-4xl md:text-5xl lg:text-7xl font-extrabold; }
+  h1 { @apply text-4xl md:text-5xl lg:text-7xl font-light; }
   h2 { @apply text-3xl md:text-4xl lg:text-6xl font-bold; }
   h3 { @apply text-2xl md:text-3xl lg:text-4xl; }
 }
@@ -137,7 +137,7 @@
 
 /* Cursor spotlight */
 .cursor-glow {
-  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(249, 115, 22, 0.08), transparent 45%);
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(150, 183, 82, 0.09), transparent 45%);
 }
 
 /* Slowly drifting background blobs */
@@ -162,11 +162,11 @@
 }
 .avatar-ring,
 .glow-border {
-  background: conic-gradient(from var(--angle), #f97316, #ef4444, #fbbf24, transparent 60%, #f97316);
+  background: conic-gradient(from var(--angle), #96b752, #2f915f, #d9e7a8, transparent 60%, #96b752);
   animation: spin-angle 6s linear infinite;
 }
 .glow-border {
-  background: conic-gradient(from var(--angle), rgba(249,115,22,0.9), rgba(239,68,68,0.6), rgba(161,161,170,0.15) 40%, rgba(161,161,170,0.15) 70%, rgba(249,115,22,0.9));
+  background: conic-gradient(from var(--angle), rgba(150,183,82,0.9), rgba(47,145,95,0.6), rgba(148,157,138,0.15) 40%, rgba(148,157,138,0.15) 70%, rgba(150,183,82,0.9));
 }
 @keyframes spin-angle { to { --angle: 360deg; } }
 
@@ -176,7 +176,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(420px circle at var(--sx, 50%) var(--sy, 30%), rgba(249, 115, 22, 0.09), transparent 60%);
+  background: radial-gradient(420px circle at var(--sx, 50%) var(--sy, 30%), rgba(150, 183, 82, 0.10), transparent 60%);
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -213,4 +213,22 @@
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
   .hero-in, .ambient-blob, .avatar-ring, .glow-border, .animate-scroll-dot, .animate-pop, .nav-pill { animation: none; }
+}
+
+/* =====================================================================
+   Woodland theme
+   ===================================================================== */
+
+/* Frosted field-guide card (hero notes, pills) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 40px -12px rgba(27, 32, 26, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+.dark .glass-card {
+  background: rgba(22, 32, 24, 0.45);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }

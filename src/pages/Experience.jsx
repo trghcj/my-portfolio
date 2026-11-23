@@ -69,10 +69,10 @@ function SectionHeader({ icon, eyebrow, title, subtitle }) {
   return (
     <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
       <div>
-        <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-orange-600 dark:text-orange-500 mb-3">
+        <span className="inline-flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-[0.25em] text-orange-600 dark:text-orange-500 mb-3">
           {icon} {eyebrow}
         </span>
-        <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter">
+        <h2 className="font-display text-5xl md:text-6xl font-light text-zinc-900 dark:text-white tracking-tight">
           {title}
         </h2>
       </div>
@@ -82,7 +82,7 @@ function SectionHeader({ icon, eyebrow, title, subtitle }) {
 }
 
 const cardClass =
-  "rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-[#0c0c0e]/80 backdrop-blur-sm shadow-sm hover:shadow-xl hover:shadow-orange-500/5 hover:border-orange-500/30 transition-all duration-500";
+  "rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-[#0e140f]/80 backdrop-blur-sm shadow-sm hover:shadow-xl hover:shadow-orange-500/5 hover:border-orange-500/30 transition-all duration-500";
 
 function Logo({ src, alt, cover }) {
   return (
@@ -105,7 +105,7 @@ export default function Experience() {
         <div>
           <SectionHeader
             icon={<Briefcase size={14} />}
-            eyebrow="Career"
+            eyebrow="Chapter 03 · Career"
             title="Experience."
             subtitle="Internships where I shipped production features across web, mobile, and backend systems."
           />
@@ -125,7 +125,7 @@ export default function Experience() {
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
                     <div className="min-w-0">
-                      <h3 className="font-display text-xl md:text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">
+                      <h3 className="font-display text-xl md:text-2xl font-medium text-zinc-900 dark:text-white tracking-tight">
                         {exp.title}
                       </h3>
                       <p className="text-base font-medium text-zinc-600 dark:text-zinc-400">{exp.company}</p>
@@ -177,7 +177,7 @@ export default function Experience() {
         <div id="education" className="scroll-mt-24">
           <SectionHeader
             icon={<GraduationCap size={14} />}
-            eyebrow="Academics"
+            eyebrow="Chapter 04 · Academics"
             title="Education."
             subtitle="The academic foundation behind my engineering work."
           />
@@ -188,7 +188,7 @@ export default function Experience() {
                 <div className="flex items-start gap-4 mb-5">
                   <Logo src={edu.logo} alt={edu.institution} />
                   <div className="min-w-0">
-                    <h3 className="font-display text-xl md:text-2xl font-bold text-zinc-900 dark:text-white tracking-tight leading-tight">
+                    <h3 className="font-display text-xl md:text-2xl font-medium text-zinc-900 dark:text-white tracking-tight leading-tight">
                       {edu.degree}
                     </h3>
                     <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mt-1">{edu.department}</p>

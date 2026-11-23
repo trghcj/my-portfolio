@@ -80,7 +80,7 @@ function App() {
 
   return (
     <div className={theme === "dark" ? "dark" : ""}>
-      <div className="min-h-screen bg-[#fafaf9] dark:bg-[#08080a] text-zinc-900 dark:text-zinc-100 transition-colors duration-300 relative selection:bg-orange-500 selection:text-white overflow-x-clip">
+      <div className="min-h-screen bg-[#f3f5ee] dark:bg-[#090d0a] text-zinc-900 dark:text-zinc-100 transition-colors duration-300 relative selection:bg-orange-500 selection:text-white overflow-x-clip">
 
         {/* Background: grid + ambient blobs + noise + cursor spotlight */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
@@ -95,7 +95,7 @@ function App() {
         <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4">
           {/* Scroll progress */}
           <div className="fixed top-0 left-0 right-0 h-[3px] z-[60]">
-            <div ref={progressRef} className="h-full origin-left bg-gradient-to-r from-orange-500 via-red-500 to-amber-400" style={{ transform: "scaleX(0)" }} />
+            <div ref={progressRef} className="h-full origin-left bg-gradient-to-r from-orange-500 via-red-500 to-lime-200" style={{ transform: "scaleX(0)" }} />
           </div>
 
           <nav
@@ -108,7 +108,7 @@ function App() {
             {/* Logo */}
             <button
               onClick={() => handleNavClick("home")}
-              className="font-display text-2xl font-black tracking-tighter bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+              className="font-display text-2xl font-semibold tracking-tight bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
             >
               DS.
             </button>
@@ -182,7 +182,7 @@ function App() {
 
         {/* SECTIONS */}
         <main className="relative z-10 flex flex-col gap-16 md:gap-24 pb-16">
-          <section id="home" className="min-h-screen flex items-center justify-center pt-24">
+          <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
             <Home onNavigate={handleNavClick} />
           </section>
 
@@ -208,7 +208,7 @@ function App() {
           <div className="max-w-7xl mx-auto px-6 py-14">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
               <div>
-                <p className="font-display text-6xl md:text-8xl font-black tracking-tighter leading-none bg-gradient-to-br from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-600 bg-clip-text text-transparent">
+                <p className="font-display text-6xl md:text-8xl font-light tracking-tight leading-none bg-gradient-to-br from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-600 bg-clip-text text-transparent">
                   Divyansh Singh
                 </p>
                 <p className="mt-4 text-zinc-500 dark:text-zinc-400 font-light">

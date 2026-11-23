@@ -60,7 +60,8 @@ export default function Projects() {
 
         {/* Section Header */}
         <div className="mb-24 max-w-2xl">
-          <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter mb-6">
+          <span className="inline-flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-[0.25em] text-orange-600 dark:text-orange-400 mb-3"><span className="w-6 h-px bg-orange-500/60" />Chapter 01 · Projects</span>
+          <h2 className="font-display text-5xl md:text-6xl font-light text-zinc-900 dark:text-white tracking-tight mb-6">
             Selected Work.
           </h2>
           <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light">
@@ -76,16 +77,16 @@ export default function Projects() {
               ref={(el) => (cardRefs.current[i] = el)}
               className={`project-emerge group relative w-full lg:w-[72%] ${i % 2 === 1 ? "lg:self-end" : "lg:self-start"}`}
             >
-              <div className="project-emerge-card relative overflow-hidden rounded-[2rem] border border-zinc-200 dark:border-zinc-800/70 bg-white/80 dark:bg-[#0c0c0e]/80 backdrop-blur-sm shadow-2xl p-5 md:p-8">
+              <div className="project-emerge-card relative overflow-hidden rounded-[2rem] border border-zinc-200 dark:border-zinc-800/70 bg-white/80 dark:bg-[#0e140f]/80 backdrop-blur-sm shadow-2xl p-5 md:p-8">
                 <div className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-10 ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
 
                   {/* Text Content */}
                   <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                    <span className="text-xs font-bold uppercase tracking-[0.25em] text-orange-600 dark:text-orange-500 mb-4">
+                    <span className="text-xs font-mono font-medium uppercase tracking-[0.25em] text-orange-600 dark:text-orange-500 mb-4">
                       {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
                     </span>
 
-                    <h3 className="font-display text-2xl md:text-3xl font-black mb-3 text-zinc-900 dark:text-white tracking-tight">
+                    <h3 className="font-display text-2xl md:text-3xl font-light mb-3 text-zinc-900 dark:text-white tracking-tight">
                       {p.title}
                     </h3>
 

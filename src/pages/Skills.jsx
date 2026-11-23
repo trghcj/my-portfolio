@@ -59,9 +59,12 @@ export default function Skills() {
 
         {/* Header */}
         <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <h2 className="font-display text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tighter">
-            Technical Arsenal.
-          </h2>
+          <div>
+            <span className="inline-flex items-center gap-2 text-xs font-mono font-medium uppercase tracking-[0.25em] text-orange-600 dark:text-orange-400 mb-3"><span className="w-6 h-px bg-orange-500/60" />Chapter 02 · Toolkit</span>
+            <h2 className="font-display text-5xl md:text-6xl font-light text-zinc-900 dark:text-white tracking-tight">
+              Technical Arsenal.
+            </h2>
+          </div>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light max-w-md md:text-right">
             The frameworks, languages, and tools I use to architect robust systems and build premium interfaces.
           </p>
@@ -87,13 +90,13 @@ export default function Skills() {
             <Reveal
               key={category.title}
               delay={150 + idx * 120}
-              className="group/card relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-[#0c0c0e]/80 backdrop-blur-sm p-6 md:p-8 shadow-sm hover:shadow-2xl hover:shadow-orange-500/10 hover:border-orange-500/40 transition-all duration-500"
+              className="group/card relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-[#0e140f]/80 backdrop-blur-sm p-6 md:p-8 shadow-sm hover:shadow-2xl hover:shadow-orange-500/10 hover:border-orange-500/40 transition-all duration-500"
             >
               {/* Glow */}
               <div className="pointer-events-none absolute -top-24 -right-24 w-56 h-56 rounded-full bg-gradient-to-br from-orange-500/20 to-red-500/10 blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-700" />
 
               <div className="relative flex items-start justify-between mb-2">
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-orange-600 dark:text-orange-500">
+                <span className="text-xs font-mono font-medium uppercase tracking-[0.25em] text-orange-600 dark:text-orange-500">
                   0{idx + 1}
                 </span>
                 <span className="text-xs font-semibold text-zinc-400 dark:text-zinc-500">
@@ -101,7 +104,7 @@ export default function Skills() {
                 </span>
               </div>
 
-              <h3 className="relative font-display text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight mb-2">
+              <h3 className="relative font-display text-2xl md:text-3xl font-normal text-zinc-900 dark:text-white tracking-tight mb-2">
                 {category.title}
               </h3>
               <p className="relative text-sm text-zinc-500 dark:text-zinc-400 font-light mb-8">
