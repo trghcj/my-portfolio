@@ -58,12 +58,23 @@ export default function Home({ onNavigate }) {
         {/* Left: copy */}
         <div className="max-w-3xl min-w-0">
           <div
-            className="hero-in mb-8 inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-card text-xs font-mono uppercase tracking-[0.2em] text-zinc-700 dark:text-white/80"
+            className="hero-in mb-8 inline-flex items-center gap-3 pl-1.5 pr-5 py-1.5 rounded-full glass-card text-xs font-mono uppercase tracking-[0.2em] text-zinc-700 dark:text-white/80"
             style={{ "--d": "100ms" }}
           >
-            <span className="relative flex w-2 h-2">
-              <span className="absolute inline-flex w-full h-full rounded-full bg-orange-400 opacity-75 animate-ping" />
-              <span className="relative inline-flex w-2 h-2 rounded-full bg-orange-400" />
+            <span className="relative shrink-0">
+              <span className="avatar-ring block w-14 h-14 md:w-16 md:h-16 rounded-full p-[2px]">
+                <span className="block w-full h-full rounded-full bg-[#f3f5ee] dark:bg-[#0e140f] p-[2px]">
+                  <img
+                    src="https://github.com/trghcj.png"
+                    alt="Divyansh Singh"
+                    className="w-full h-full rounded-full object-cover"
+                  />
+                </span>
+              </span>
+              <span className="absolute bottom-0.5 right-0.5 flex w-3 h-3">
+                <span className="absolute inline-flex w-full h-full rounded-full bg-orange-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex w-3 h-3 rounded-full bg-orange-400 ring-2 ring-[#f3f5ee] dark:ring-[#0e140f]" />
+              </span>
             </span>
             Hi, I&apos;m Divyansh Singh
           </div>

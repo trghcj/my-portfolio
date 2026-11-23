@@ -281,3 +281,59 @@
   .tt-twinkle, .tt-firefly { animation: none; }
   .theme-toggle * { transition-duration: 0ms !important; }
 }
+
+/* ---------- Woodland backdrop: ridges, fog, fireflies ---------- */
+.woodland-ridges { --scroll: 0; height: 32vh; }
+.woodland-ridges .ridge { position: absolute; left: 0; bottom: 0; will-change: transform; }
+.ridge--far  { transform: translateY(calc(var(--scroll) * 28px));  opacity: 0.45; }
+.ridge--mid  { transform: translateY(calc(var(--scroll) * 56px));  opacity: 0.5; }
+.ridge--near { transform: translateY(calc(var(--scroll) * 96px));  opacity: 0.55; }
+.dark .ridge--far, .dark .ridge--mid, .dark .ridge--near { opacity: 1; }
+
+.fog-band {
+  width: 200%;
+  background: radial-gradient(ellipse at 25% 50%, rgba(255, 255, 255, 0.55), transparent 60%),
+              radial-gradient(ellipse at 75% 50%, rgba(255, 255, 255, 0.45), transparent 60%);
+  filter: blur(30px);
+  animation: fog-drift 70s linear infinite;
+}
+.dark .fog-band {
+  background: radial-gradient(ellipse at 25% 50%, rgba(150, 183, 82, 0.06), transparent 60%),
+              radial-gradient(ellipse at 75% 50%, rgba(47, 145, 95, 0.05), transparent 60%);
+}
+.fog-band--slow { animation-duration: 110s; animation-direction: reverse; }
+@keyframes fog-drift { to { transform: translateX(-50%); } }
+
+.firefly {
+  background: #96b752;
+  opacity: 0.35;
+  animation-name: firefly-drift, firefly-blink;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-direction: alternate, alternate;
+}
+.dark .firefly {
+  background: #e3f59a;
+  box-shadow: 0 0 6px 2px rgba(217, 240, 124, 0.55), 0 0 18px 4px rgba(217, 240, 124, 0.18);
+}
+@keyframes firefly-drift {
+  0%   { transform: translate(0, 0); }
+  33%  { transform: translate(28px, -22px); }
+  66%  { transform: translate(-18px, -40px); }
+  100% { transform: translate(14px, -64px); }
+}
+@keyframes firefly-blink {
+  0%, 100% { opacity: 0.08; }
+  50%      { opacity: 0.85; }
+}
+
+/* ---------- Footer: forest floor ---------- */
+.footer-forest {
+  background: linear-gradient(180deg, #13211a 0%, #0a120c 100%);
+}
+.footer-forest .firefly { background: #e3f59a; box-shadow: 0 0 6px 2px rgba(217, 240, 124, 0.55); }
+
+@media (prefers-reduced-motion: reduce) {
+  .fog-band, .firefly { animation: none; }
+  .firefly { opacity: 0.5; }
+}
